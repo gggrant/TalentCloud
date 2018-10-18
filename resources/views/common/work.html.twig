@@ -1,0 +1,279 @@
+{# =============================================================================
+
+    Talent Cloud
+    Work
+
+============================================================================= #}
+{% if prefix %}
+    {% set name_prefix = prefix ~ "[work_experiences][:template][:id]" %}
+    {% set id_prefix = name_prefix %}
+{% else %}
+    {% set name_prefix = "work_experiences[:template][:id]" %}
+    {% set id_prefix = name_prefix %}
+{% endif %}
+
+{% if work %}
+    {% set name_prefix = name_prefix|replace({":template":"old", ":id":work.id}) %}
+    {% set id_prefix = id_prefix|replace({":template":"old", ":id":work.id}) %}
+{% endif %}
+
+<div
+    class="profile-element accordion work {% if work == false %}template active{% endif %} modal-target-object"
+    data-item-id="{{ work ? work.id : 0 }}">
+
+    {# Accordion Trigger #}
+
+        <div
+            {% if work == false %}
+                aria-expanded="true"
+            {% else %}
+                aria-expanded="false"
+            {% endif %}
+            class="accordion-trigger"
+            tabindex="0">
+
+            <span
+                class="accordion-title">
+                {% if work == false %}
+                    {{ work_template.new_work_label }}
+                {% else %}
+                    {{ work.role }}, {{ work.company }}
+                {% endif %}
+            </span>
+
+            <i class="fas fa-chevron-up"></i>
+
+        </div>
+
+    {# Accordion Content #}
+
+        <div
+            {% if work == false %}
+                aria-hidden="false"
+            {% else %}
+                aria-hidden="true"
+            {% endif %}
+            class="accordion-content">
+
+            {% if locale == "application-view" %}
+
+                <div
+                    class="profile-element__preview flex-grid">
+
+                    <div
+                        class="box med-1of2">
+
+                        <span>
+                            {{ work_template.role_label }}
+                        </span>
+
+                        <p>
+                            {{ work.role }}
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="box med-1of2">
+
+                        <span>
+                            {{ work_template.company_label }}
+                        </span>
+
+                        <p>
+                            {{ work.company }}
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="box full">
+
+                        <span>
+                            {{ work_template.description_label }}
+                        </span>
+
+                        <p>
+                            {{ work.description }}
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="box med-1of2">
+
+                        <span>
+                            {{ work_template.start_date_label }}
+                        </span>
+
+                        <p>
+                            {{ work.start_date|date("Y-m-d") }}
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="box med-1of2">
+
+                        <span>
+                            {{ work_template.end_date_label }}
+                        </span>
+
+                        <p>
+                            {{ work.end_date|date("Y-m-d") }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            {% else %}
+
+                <div
+                    class="form__wrapper">
+
+                    <div
+                        class="flex-grid">
+
+                        <div
+                            class="box med-1of2">
+
+                            <div
+                                class="form__input-wrapper--float {% if work.role == true %}active{% endif %}">
+                                <label
+                                    class="form__label"
+                                    for="{{ id_prefix }}workRole">
+                                    {{ work_template.role_label }}
+                                </label>
+                                <input
+                                    class="form__input"
+                                    id="{{ id_prefix }}workRole"
+                                    type="text"
+                                    name="{{ name_prefix }}[role]"
+                                    value="{{ work.role }}" />
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="box med-1of2">
+
+                            <div
+                                class="form__input-wrapper--float {% if work.company == true %}active{% endif %}">
+                                <label
+                                    class="form__label"
+                                    for="{{ id_prefix }}workCompany">
+                                    {{ work_template.company_label }}
+                                </label>
+                                <input
+                                    class="form__input"
+                                    id="{{ id_prefix }}workCompany"
+                                    type="text"
+                                    name="{{ name_prefix }}[company]"
+                                    value="{{ work.company }}" />
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="box full">
+
+                            <div
+                                class="form__input-wrapper--float {% if work.description != null%}active{% endif %}">
+
+                                <label
+                                    class="form__label"
+                                    for="{{ id_prefix }}workDescription">
+                                    {{ work_template.description_label }}
+                                </label>
+
+                                <textarea
+                                    class="form__textarea"
+                                    id="{{ id_prefix }}workDescription"
+                                    name="{{ name_prefix }}[description]">{{ work.description }}</textarea>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="box med-1of2">
+
+                            <div
+                                class="form__input-wrapper--date">
+
+                                <label
+                                    class="form__label"
+                                    for="{{ id_prefix }}workStartDate">
+                                    {{ work_template.start_date_label }}
+                                </label>
+
+                                <input
+                                    class="form__input"
+                                    id="{{ id_prefix }}workStartDate"
+                                    type="date"
+                                    name="{{ name_prefix }}[start_date]"
+                                    value="{{ work.start_date|date("Y-m-d") }}">
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="box med-1of2">
+
+                            <div
+                                class="form__input-wrapper--date">
+
+                                <label
+                                    class="form__label"
+                                    for="{{ id_prefix }}workEndDate">
+                                    {{ work_template.end_date_label }}
+                                </label>
+
+                                <input
+                                    class="form__input"
+                                    id="{{ id_prefix }}workEndDate"
+                                    type="date"
+                                    name="{{ name_prefix }}[end_date]"
+                                    value="{{ work.end_date|date("Y-m-d") }}">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="accordion-actions flex-grid">
+
+                    <div
+                        class="box med-1of2">
+                        <button
+                            class="button--red light-bg modal-trigger"
+                            data-modal-id="deleteWork"
+                            type="button">
+                            {{ work_template.action_01 }}
+                        </button>
+                    </div>
+
+                    <div
+                        class="box med-1of2">
+                        <button
+                            class="button--blue light-bg"
+                            type="submit"
+                            name="submit"
+                            value="{{ name_prefix }}">
+                            {{ work_template.action_02 }}
+                        </button>
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+</div>

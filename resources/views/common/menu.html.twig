@@ -1,0 +1,58 @@
+{# =============================================================================
+
+    Talent Cloud
+    Menu
+
+============================================================================= #}
+<nav
+    class="menu">
+
+    <button
+        class="menu__mobile-trigger"
+        onclick="">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
+        {{ nav.mobile_trigger_label }}
+    </button>
+
+    <ul class="menu__list">
+
+        {% for item in menu.items %}
+
+            <li>
+
+                <a
+                    class="{% if item.active == true %}active{% endif %}"
+                    href="{{ item.link }}"
+                    title="Visit {{ item.name }}.">
+                    {{ item.name }}
+                </a>
+
+            </li>
+
+        {% endfor %}
+
+        {% if auth_guest() %}
+
+            <li><a href="{{ login_modals.login_link }}">{{ menu.login }}</a></li>
+            <li><a href="{{ login_modals.register_link }}">{{ menu.register }}</a></li>
+
+        {% else %}
+
+            <li>
+                <a href="{{ login_modals.logout_link }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                    {{ menu.logout }}
+                </a>
+
+                <form id="logout-form" action="{{ login_modals.logout_link }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+
+        {% endif %}
+
+    </ul>
+
+</nav>

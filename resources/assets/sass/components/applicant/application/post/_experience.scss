@@ -1,0 +1,76 @@
+// =============================================================================
+
+    // Application Post: Experience
+
+// =============================================================================
+.application-post__experience {
+    // background: $palette--white;
+    padding: $section-padding;
+
+    >.container--copy {
+
+        >h3 {
+            border-bottom: 1px solid $palette--font-black;
+            color: $palette--black;
+            font-family: $font--sans;
+            font-size: $font-scale--h3;
+            font-weight: 400;
+            margin: calc(#{$unit} * 4) 0 calc(#{$unit} * 2) 0;
+            padding: 0 0 2rem 0;
+            text-align: left;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+        }
+
+        >span {
+            color: $palette--blue;
+            display: block;
+            font-family: $font--sans;
+            font-size: $font-scale--h3;
+            font-weight: 600;
+            margin: 0 0 calc(#{$unit} * 1.5);
+        }
+
+        >p {
+            @extend %paragraph;
+            margin: calc(#{$unit} * 1.5) 0 calc(#{$unit} * 2);
+
+            &.applicant-manager__answer {
+                margin: calc(#{$unit} * 1.5) 0 calc(#{$unit} * 4);
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+            }
+
+        }
+
+    }
+
+    >.container--layout {
+        border-top: 1px solid darken($palette--white, 20%);
+        margin-top: calc(#{$unit} * 5);
+        border-bottom: 1px solid darken($palette--white, 20%);
+        margin-bottom: calc(#{$unit} * 5);
+        padding: 5rem 0 4rem;
+    }
+
+    .application-post__experience-controls {
+        margin: 0 -1rem;
+
+        .box {
+            padding: 0 1rem 1rem 1rem;
+
+            @media #{$p-tablet} {
+                padding: 0 1rem;
+            }
+
+        }
+
+    }
+
+}

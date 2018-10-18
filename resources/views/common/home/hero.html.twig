@@ -1,0 +1,35 @@
+{# =============================================================================
+
+    Talent Cloud
+    Home: Hero
+
+============================================================================= #}
+<header
+    class="home__hero"
+    style="background-image: url('/images/bg_crowd.jpg');">
+
+    {% include "../common/menu" %}
+
+    {# Hero Content #}
+
+        <div
+            class="home__hero-content flex-grid middle">
+
+            <div
+                class="box med-1of2">
+                <img
+                    alt="{{ hero.hero_logo_alt }}"
+                    class=""
+                    src="{{ hero.hero_logo }}">
+            </div>
+
+            <div
+                class="box med-1of2">
+                {{ hero.hero_tagline }}
+            </div>
+
+        </div>
+
+    {# Admin Tagline #}
+
+</header>

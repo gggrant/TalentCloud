@@ -1,43 +1,42 @@
-# Talent Cloud
-# .travis.yml
-
-# Required to run your project under the correct environment.
 language: php
 
-# Versions of PHP you want your project run with.
 php:
-  - 5.6
   - 7.0
-  - hhvm
 
-# sudo: false
-
-# allow_failures: Allow this build to fail under the specified environments.
-# fast_finish: If your build fails do not continue trying to build, just stop.
-matrix:
-  allow_failures:
-    - php: 7.0
-    - php: hhvm
-  fast_finish: true
+sudo: required
 
 services:
-  - mysql
+  # docker
+  - postgresql
 
-# Commands to be run before your environment runs.
-before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction
+install:
+  - sudo cp -a .env.example .env
+  # sudo make gen-certs
+  # sudo docker-compose up --abort-on-container-exit -d
+  - composer install
+  - npm install
+  - php artisan key:generate
+  - php artisan config:cache
 
-# Commands you want to run that will verify your build.
 script:
-  - composer validate
-  # phpunit --coverage-text --coverage-clover=coverage.clover
+  # sudo make code-sniff
+  # sudo make test
+  - vendor/bin/phpunit --coverage-clover=coverage.xml
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.xml
 
-after_script:
- # wget https://scrutinizer-ci.com/ocular.phar
- # php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+#after_script:
+  # sudo make docker-stop
 
-# Customize when the notification emails are sent.
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  # echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  # docker build -t gctcntgc/talentcloud:travis
+  # docker push gctcntgc/talentcloud:travis
+
+# Slack notifications / do not send emails
 notifications:
-    on_success: never
-    on_failure: always
+  email: never
+  slack: talent-cloud:ASWQRTtW3oT2C2DHYaBzSCJg
+  on_success: change
+  on_failure: always

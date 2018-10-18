@@ -1,3 +1,5 @@
+# Global
+.*.swp
 .DS_Store
 applet
 application.linux32
@@ -6,7 +8,7 @@ application.windows32
 application.windows64
 application.macosx
 
-## IDE/hidden/testing/OS cache files
+## IDE/hidden/testing/cache
 /nbproject
 /nb-configuration.xml
 Session.vim
@@ -17,20 +19,40 @@ tmtags
 Thumbs.db
 Desktop.ini
 npm-debug.log
+.tags
 *~
 
-## composer
+## TalentCloud
+/etc/ssl/
+/report
+/tests
+/database/db/pgsql
+
+## Laravel
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vscode
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env
+.phpunit.result.cache
+
+## Composer
 /vendor
 composer.lock
 
-## node
+## node.js
 /node_modules
-public_html/node_modules
-public_html/scss/vendor
+package-lock.json
 
-## tests/misc
-/build
-/tests
-/selenium_tests
-.tags
-.env
+# PHPStorm
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries

@@ -1,0 +1,66 @@
+{# =============================================================================
+
+    Talent Cloud
+    Applicant: Manager - Questions
+
+============================================================================= #}
+<div
+    class="applicant-profile__header">
+
+    <div
+        class="container--copy">
+
+        {# Profile Photo #}
+
+            <button
+                class="applicant-profile__header-photo"
+                onclick="">
+                <div
+                    style="background-image:url('{{ manager_profile_photo_url }}')">
+                </div>
+            </button>
+
+        {# Name #}
+
+            <h3>
+                {{ manager.user.name }}
+            </h3>
+
+        {# Tagline #}
+
+            <span>
+                {{ manager.position }}{{ manager_profile.manager_department_bridge }}{{ manager.department.value }}
+            </span>
+
+        {# Social Accounts #}
+
+            {% if manager.twitter_username or manager.linkedin_url %}
+
+                <ul
+                    class="applicant-profile__social-links">
+
+                    <li>
+                        <a
+                            href="{{ urls.twitter|replace({":username":manager.twitter_username}) }}"
+                            target="_blank"
+                            title="{{ manager_profile.twitter_label|replace({":name":manager.user.name}) }}">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="{{ manager.linkedin_url }}"
+                            target="_blank"
+                            title="{{ manager_profile.linkedin_label|replace({":name":manager.user.name}) }}">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+            {% endif %}
+
+    </div>
+
+</div>

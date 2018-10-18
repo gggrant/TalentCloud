@@ -1,0 +1,217 @@
+{# =============================================================================
+
+    Talent Cloud
+    Applicant: Application Post - Tracker
+
+============================================================================= #}
+<section
+    class="application-post__skills-layout">
+
+    <div
+        class="container--copy">
+
+        {% if application_step == "3" %}
+            <h3>
+                {{ application_template.essential_title }}
+            </h3>
+            <p>
+                {{ application_template.essential_context }}
+            </p>
+        {% elseif application_step == "4" %}
+            <h3>
+                {{ application_template.asset_title }}
+            </h3>
+            <p>
+                {{ application_template.asset_context }}
+            </p>
+        {% endif %}
+
+        <a
+            class="button--blue light-bg"
+            href="#begin"
+            {% if application_step == "3" %}
+                title="{{ application_template.essential_start_button_title }}"
+            {% elseif application_step == "4" %}
+                title="{{ application_template.asset_start_button_title }}"
+            {% endif %}>
+            {{ application_template.skills_start_button_label }}
+        </a>
+
+    </div>
+
+    <div
+        class="container--layout">
+
+        <div
+            class="flex-grid">
+
+            {# Include Sidebar #}
+
+                {% include "applicant/application_post/common/sidebar" %}
+
+            {# Skills Content #}
+
+                <div class="application-post__content-wrapper box lg-3of4">
+
+                    <a
+                        aria-hidden="true"
+                        class="application-post__anchor"
+                        id="begin">
+                    </a>
+
+                    {# Skills Layout #}
+
+                        {# Profile List (Soft Skills) #}
+
+                            <div
+                                class="profile-list">
+
+                                {# Profile List Header #}
+
+                                    <div
+                                        class="profile-list__header flex-grid middle">
+
+                                        <div
+                                            class="box med-1of2">
+
+                                            {% if application_step == "3" %}
+                                                <h3>{{ application_template.skills_section.essential_title }}</h3>
+                                            {% elseif application_step == "4" %}
+                                                <h3>{{ application_template.skills_section.asset_title }}</h3>
+                                            {% endif %}
+
+                                        </div>
+
+                                        <div
+                                            class="box med-1of2">
+
+                                        </div>
+
+                                    </div>
+
+                                {# Set Locale #}
+
+                                    {% set locale = "application" %}
+
+                                {# Profile Element List #}
+
+                                    <div
+                                        class="profile-element-list">
+
+                                        {% if application_step == "3" %}
+
+                                            {% for criterion in criteria.essential %}
+
+                                                {# Get User Skill #}
+
+                                                    {% set skill_declaration = false %}
+
+                                                    {% for skillDeclaration in applicant.skill_declarations %}
+
+                                                        {% if criterion.skill.id == skillDeclaration.skill_id %}
+
+                                                            {% set skill_declaration = skillDeclaration %}
+
+                                                        {% endif %}
+
+                                                    {% endfor %}
+
+                                                {# Get Skill Type #}
+
+                                                    {% set skillType = criterion.skill.skill_type.name %}
+
+                                                {# Import Skill Template #}
+
+                                                    <a
+                                                        class="application-post__anchor"
+                                                        id="skill{{ criterion.skill.name }}"></a>
+
+                                                    {% include "common/skill" %}
+
+                                            {% endfor %}
+
+                                        {% endif %}
+
+                                        {% if application_step == "4" %}
+
+                                            {% for criterion in criteria.asset %}
+
+                                                {# Get User Skill #}
+
+                                                    {% set skill_declaration = false %}
+
+                                                    {% for skillDeclaration in applicant.skill_declarations %}
+
+                                                        {% if criterion.skill.id == skillDeclaration.skill_id %}
+
+                                                            {% set skill_declaration = skillDeclaration %}
+
+                                                        {% endif %}
+
+                                                    {% endfor %}
+
+                                                {# Get Skill Type #}
+
+                                                    {% set skillType = criterion.skill.skill_type.name %}
+
+                                                {# Import Skill Template #}
+
+                                                    <a
+                                                        class="application-post__anchor"
+                                                        id="skill{{ criterion.skill.name }}"></a>
+
+                                                    {% include "common/skill" %}
+
+                                            {% endfor %}
+
+                                        {% endif %}
+
+                                    </div>
+
+                            </div>
+
+                </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="container--copy">
+
+        {# Save Buttons #}
+
+            <div
+                class="flex-grid middle application-post__action-wrapper">
+
+                <div
+                    class="box med-1of2">
+
+                    <button
+                        class="button--blue light-bg"
+                        type="submit"
+                        name="submit"
+                        value="save_and_quit">
+                        {{ application_template.save_quit_button_label }}
+                    </button>
+
+                </div>
+
+                <div
+                    class="box med-1of2">
+
+                    <button
+                        class="button--blue light-bg"
+                        type="submit"
+                        name="submit"
+                        value="save_and_continue">
+                        {{ application_template.save_continue_button_label }}
+                    </button>
+
+                </div>
+
+            </div>
+
+    </div>
+
+</section>

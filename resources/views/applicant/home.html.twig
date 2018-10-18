@@ -1,0 +1,48 @@
+{# =============================================================================
+
+    Talent Cloud
+    Applicant: Home
+
+============================================================================= #}
+
+<!DOCTYPE html>
+
+<html
+    lang="en">
+
+    <head>
+    <title>{{ home.home_title }}</title>
+
+        {% include "common/head" %}
+
+        {# Note that the </head> and <body> tags are located inside the common/head file due to Google Tag Manager being required on all pages. #}
+
+    {# /head #}
+
+    {# body #}
+
+        {% include "common/alert" %}
+
+        {% include "common/goc" %}
+
+        {% include "common/home/hero" %}
+
+        {% include "applicant/home/about" %}
+
+        {% include "applicant/home/how" %}
+
+        {% include "applicant/home/team" %}
+
+        {# Login Modals #}
+
+        {% include "common/modal" with {"page":login_modals} %}
+
+        {% include "common/footer" %}
+
+        {# Scripts #}
+
+        {% include "common/scripts" %}
+
+    </body>
+
+</html>

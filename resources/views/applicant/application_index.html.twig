@@ -1,0 +1,49 @@
+{# =============================================================================
+
+    Talent Cloud
+    Applicant: My Applications
+
+============================================================================= #}
+
+<!DOCTYPE html>
+
+<html
+    lang="en">
+
+    <head>
+
+        {% include "common/head" %}
+
+        {# Note that the </head> and <body> tags are located inside the common/head file due to Google Tag Manager being required on all pages. #}
+
+    {# /head #}
+
+    {# body #}
+
+        {% include "common/alert" %}
+
+        {% include "common/goc" %}
+
+        {% include "common/header" with {'header':application_index} %}
+
+        {# include "applicant/application_index/filters" #}
+
+        {% include "applicant/application_index/index" %}
+
+        {# Modals #}
+
+        {% include "common.modal" with {"page":application_index} %}
+
+        {# Login Modals #}
+
+        {% include "common/modal" with {"page":login_modals} %}
+
+        {% include "common/footer" %}
+
+        {# Scripts #}
+
+        {% include "common/scripts" %}
+
+    </body>
+
+</html>

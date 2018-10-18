@@ -1,0 +1,170 @@
+{# =============================================================================
+
+    Talent Cloud
+    Manager: Create Job Task
+
+============================================================================= #}
+{% if prefix %}
+    {% set name_prefix = prefix ~ "[criteria][:template][:criteria_type][:skill_type][:id]"|replace({":criteria_type":criteria_type, ":skill_type":skillType}) %}
+    {% set id_prefix = name_prefix %}
+{% else %}
+    {% set name_prefix = "criteria[:template][:criteria_type][:skill_type][:id]"|replace({":criteria_type":criteria_type, ":skill_type":skillType}) %}
+    {% set id_prefix = name_prefix %}
+{% endif %}
+
+{% if criteria %}
+    {% set name_prefix = name_prefix|replace({":template":"old", ":id":criteria.id}) %}
+    {% set id_prefix = id_prefix|replace({":template":"old", ":id":criteria.id}) %}
+{% endif %}
+
+<div
+    class="manager-jobs__create-skill {% if criteria == false %}template{% endif %}"
+    data-item-id="{% if criteria == false %}0{% else %}{{ criteria.id }}{% endif %}">
+
+    <fieldset
+        class="form__fieldset">
+
+        <legend>
+
+            <div
+                class="flex-grid">
+
+                <div
+                    class="box small-2of3">
+                    Skill Information
+                </div>
+
+                <div
+                    class="box small-1of3">
+                    <button
+                        type="button"
+                        class="manager-jobs__delete-skill-button">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </legend>
+
+        <div
+            class="flex-grid">
+
+            <div
+                class="box med-1of2">
+
+                <div
+                    class="form__input-wrapper--select">
+
+                    <label
+                        class="form__label"
+                        for="{{ id_prefix }}criteriaSkill">
+                        Select Skill
+                    </label>
+
+                    <div
+                        class="form__select-wrapper fas fa-chevron-down">
+
+                        <select
+                            id="{{ id_prefix }}criteriaSkill"
+                            class="form__input"
+                            name="{{ name_prefix }}[skill_id]">
+
+                            {% for skill in skills %}
+
+                                {% if skill.skill_type.name == skillType %}
+
+                                    <option
+                                        value="{{ skill.id }}"
+                                        {% if criteria.skill.id == skill.id %}selected{% endif %}>{{ skill_template.skills[skill.name].name }}</option>
+
+                                {% endif %}
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                class="box med-1of2">
+
+                <div
+                    class="form__input-wrapper--select">
+                    <label
+                        class="form__label"
+                        for="{{ id_prefix }}criteriaLevel">
+                        Select Level Required
+                    </label>
+                    <div
+                        class="form__select-wrapper fas fa-chevron-down">
+                        <select
+                            id="{{ id_prefix }}criteriaLevel"
+                            class="form__input"
+                            name="{{ name_prefix }}[skill_level_id]">
+
+                            {% for level in skill_levels %}
+
+                                <option
+                                    value="{{ level.id }}"
+                                    {% if criteria.skill_level_id == level.id %}selected{% endif %}
+                                    >{{ skill_template.skill_levels[skillType][level.name] }}</option>
+
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                class="box med-1of2">
+
+                <div
+                    class="form__input-wrapper--float {% if criteria.translate('en').description != null %}active{% endif %}">
+
+                    <label
+                        class="form__label"
+                        for="createJobCriteriaDescriptionEN">
+                        Optional Skill Context (English)
+                    </label>
+
+                    <textarea
+                        class="form__textarea"
+                        id="createJobCriteriaDescriptionEN"
+                        name="{{ name_prefix }}[description][en]">{{ criteria.translate('en').description }}</textarea>
+
+                </div>
+
+            </div>
+
+            <div
+                class="box med-1of2">
+
+                <div
+                    class="form__input-wrapper--float {% if criteria.translate('fr').description != null %}active{% endif %}">
+
+                    <label
+                        class="form__label"
+                        for="createJobCriteriaDescriptionFR">
+                        Optional Skill Context (Français)
+                    </label>
+
+                    <textarea
+                        class="form__textarea"
+                        id="createJobCriteriaDescriptionFR"
+                        name="{{ name_prefix }}[description][fr]">{{ criteria.translate('fr').description }}</textarea>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </fieldset>
+
+</div>
