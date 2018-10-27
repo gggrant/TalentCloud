@@ -22,7 +22,7 @@ services:
         restart: always
         volumes:
             - "./etc/nginx/default.conf:/etc/nginx/conf.d/default.conf"
-            - "./etc/php/php.ini:/usr/local/etc/php/7.0/conf.d/php.ini"
+            - "./etc/php/php.ini:/usr/local/etc/php/7.0/php.ini"
             - "./etc/ssl:/etc/ssl"
             - "/var/www/vendor"
             - "./:/var/www"

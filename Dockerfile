@@ -16,4 +16,6 @@ COPY .env.example .env
 RUN composer install
 EXPOSE 9000
 
-CMD php -S 0.0.0.0:$PORT public/
+CMD php -S 0.0.0.0:$PORT
+
+# public/
