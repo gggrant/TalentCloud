@@ -12,9 +12,6 @@ RUN docker-php-ext-install pdo mbstring pgsql pdo_pgsql zip && \
 WORKDIR /var/www
 COPY . /var/www
 
-RUN adduser -D talentcloud
-USER talentcloud
-
 RUN composer install
 EXPOSE 9000
 
