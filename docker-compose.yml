@@ -5,21 +5,20 @@ services:
         image: nginx:1.13.9-alpine
         container_name: web
         working_dir: /var/www
-        volumes_from:
-            - talentcloud
         restart: always
+        volumes_from:
+            - php-fpm
         depends_on:
-            - talentcloud
-            - talentcloud-db
-        environment:
-            - "NGINX_HOST=talent.local.ca"
+            - php-fpm
         ports:
-            - "$PORT"
+            - "80:80"
+            - "443:443"
+            - "5000:5000"
     # Application / PHP-FPM
-    talentcloud:
+    php-fpm:
         build: .
         # image: gctcntgc/talentcloud
-        container_name: talentcloud
+        container_name: php-fpm
         working_dir: /var/www
         restart: always
         volumes:
@@ -28,34 +27,5 @@ services:
             - "./etc/ssl:/etc/ssl"
             - "/var/www/vendor"
             - "./:/var/www"
-        links:
-            - talentcloud-db
-        environment:
-            - "DB_PORT=5432"
-            - "DB_HOST=talentcloud-db"
         ports:
             - "9000:9000"
-    # Database / Postgres
-    talentcloud-db:
-        image: postgres:9.6-alpine
-        container_name: talentcloud-db
-        restart: always
-        volumes:
-            - "./database/db/pgsql/data:/var/lib/postgresql/data"
-            - "./database/db/dumps:/manual_db"
-        environment:
-            - "POSTGRES_DB=talentcloud"
-            - "POSTGRES_USER=talentcloud"
-            - "POSTGRES_PASSWORD=talentcloud"
-            - "PGDATA=/database/db/pgsql/data"
-        ports:
-            - "5434-5432"
-    # Adminer
-    adminer:
-        image: adminer
-        container_name: adminer
-        restart: always
-        links:
-            - talentcloud-db
-        ports:
-            - "8080:8080"
