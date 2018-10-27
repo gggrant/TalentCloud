@@ -4,7 +4,7 @@ services:
     web:
         image: nginx:1.13.9-alpine
         container_name: web
-        working_dir: /var/www
+        working_dir: /var/www/public
         restart: always
         volumes_from:
             - app
@@ -18,13 +18,13 @@ services:
         build: .
         # image: gctcntgc/talentcloud
         container_name: app
-        working_dir: /var/www
+        # working_dir: /var/www
         restart: always
         volumes:
             - "./etc/nginx/default.conf:/etc/nginx/conf.d/default.conf"
-            - "./etc/php/php.ini:/usr/local/etc/php/7.0/php.ini"
+            - "./etc/php/php.ini:/usr/local/etc/php/php.ini-production"
             - "./etc/ssl:/etc/ssl"
             - "/var/www/vendor"
             - "./:/var/www"
-        ports:
-            - "9000:9000"
+        #ports:
+            # - "9000:9000"

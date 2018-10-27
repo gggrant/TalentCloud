@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-nginx -C etc/nginx/default.conf public/
+web: php -S 0.0.0.0:$PORT public/
