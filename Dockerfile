@@ -11,5 +11,11 @@ RUN docker-php-ext-install pdo mbstring pgsql pdo_pgsql zip && \
 
 WORKDIR /var/www
 COPY . /var/www
+
+RUN adduser -D talentcloud
+USER talentcloud
+
 RUN composer install
-EXPOSE $PORT
+EXPOSE 9000
+
+CMD php -S 0.0.0.0:$PORT
