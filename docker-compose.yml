@@ -7,17 +7,17 @@ services:
         working_dir: /var/www
         restart: always
         volumes_from:
-            - php-fpm
+            - app
         depends_on:
-            - php-fpm
+            - app
         ports:
             - "80:80"
             - "443:443"
     # Application / PHP-FPM
-    php-fpm:
+    app:
         build: .
         # image: gctcntgc/talentcloud
-        container_name: php-fpm
+        container_name: app
         working_dir: /var/www
         restart: always
         volumes:
