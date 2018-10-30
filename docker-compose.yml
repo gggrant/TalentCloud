@@ -12,11 +12,10 @@ services:
             - talentcloud
             - talentcloud-db
         environment:
-            - "NGINX_HOST=talent.local.ca"
+            - "NGINX_HOST=talentcloud-nuagedetalents.gccollab.ca"
         command: /bin/sh -c "envsubst '$$NGINX_HOST' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
         ports:
-            - "80:80"
-            - "443:443"
+            - "8030:80"
     # Application / PHP-FPM
     talentcloud:
         build: .
@@ -59,5 +58,5 @@ services:
         restart: always
         links:
             - talentcloud-db
-        ports:
-            - "8080:8080"
+#        ports:
+#            - "8080:8080"
