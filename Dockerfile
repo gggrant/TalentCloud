@@ -14,4 +14,4 @@ COPY . /var/www
 
 COPY .env.example .env
 RUN composer install
-EXPOSE 9000
+EXPOSE 5000 9000
