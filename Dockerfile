@@ -18,4 +18,5 @@ WORKDIR /var/www
 COPY . /var/www
 COPY .env.example .env
 RUN composer install
-EXPOSE 5000 9000
+EXPOSE 9000
+CMD 'php -S 0.0.0.0:$PORT public/'
