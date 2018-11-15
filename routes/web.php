@@ -14,6 +14,14 @@
 /* Home */
 // Route::get('/', 'HomepageController')->name('home');
 
+Route::get('design', function () {
+    return view('common/design', [
+        "design" => [
+            "title" => "GC Talent Design System"
+        ]
+    ]);
+})->name('design');
+
 Route::group(['prefix' => config('app.applicant_prefix')], function() {
 
     /* Home */

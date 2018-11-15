@@ -1,0 +1,194 @@
+// =============================================================================
+
+    // Talent Cloud
+    // System Settings
+
+// =============================================================================
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	margin: 0;
+	max-width: 100%;
+	min-height: 100vh;
+	position: relative;
+	width: 100%;
+}
+
+img,
+iframe {
+	max-width: 100%;
+}
+
+// Helper Classes ==============================================================
+
+	* {
+
+		&.hidden {
+			display: none !important;
+			height: 0 !important;
+			visibility: hidden !important;
+		}
+
+		&.center,
+		&.centre {
+			text-align: center;
+		}
+
+		&.template {
+			display: none !important;
+			height: 0 !important;
+			visibility: hidden !important;
+		}
+
+		&.rounded {
+			border-radius: 5px;
+		}
+
+		// Padding =============================================================
+
+			$padding: 1.5rem;
+
+			// Single 
+
+				&.padding {
+					padding: $padding;
+				}
+
+				&.padding--top {
+					padding-top: $padding;
+				}
+
+				&.padding--right {
+					padding-right: $padding;
+				}
+
+				&.padding--bottom {
+					padding-bottom: $padding;
+				}
+
+				&.padding--left {
+					padding-left: $padding;
+				}
+
+			// Double
+
+				&.double-padding {
+					padding: calc(#{$padding}*2);
+				}
+
+				&.double-padding--top {
+					padding-top: calc(#{$padding}*2);
+				}
+
+				&.double-padding--right {
+					padding-right: calc(#{$padding}*2);
+				}
+
+				&.double-padding--bottom {
+					padding-bottom: calc(#{$padding}*2);
+				}
+
+				&.double-padding--left {
+					padding-left: calc(#{$padding}*2);
+				}
+
+			// Triple
+
+				&.triple-padding {
+					padding: calc(#{$padding}*3);
+				}
+
+				&.triple-padding--top {
+					padding-top: calc(#{$padding}*3);
+				}
+
+				&.triple-padding--right {
+					padding-right: calc(#{$padding}*3);
+				}
+
+				&.triple-padding--bottom {
+					padding-bottom: calc(#{$padding}*3);
+				}
+
+				&.triple-padding--left {
+					padding-left: calc(#{$padding}*3);
+				}
+
+		// Margin ==============================================================
+
+			$margin: 1.5rem;
+
+			// Single 
+
+				&.margin {
+					margin: $margin;
+				}
+
+				&.margin--top {
+					margin-top: $margin;
+				}
+
+				&.margin--right {
+					margin-right: $margin;
+				}
+
+				&.margin--bottom {
+					margin-bottom: $margin;
+				}
+
+				&.margin--left {
+					margin-left: $margin;
+				}
+
+			// Double
+
+				&.double-margin {
+					margin: calc(#{$margin}*2);
+				}
+
+				&.double-margin--top {
+					margin-top: calc(#{$margin}*2);
+				}
+
+				&.double-margin--right {
+					margin-right: calc(#{$margin}*2);
+				}
+
+				&.double-margin--bottom {
+					margin-bottom: calc(#{$margin}*2);
+				}
+
+				&.double-margin--left {
+					margin-left: calc(#{$margin}*2);
+				}
+
+			// Triple
+
+				&.triple-margin {
+					margin: calc(#{$margin}*3);
+				}
+
+				&.triple-margin--top {
+					margin-top: calc(#{$margin}*3);
+				}
+
+				&.triple-margin--right {
+					margin-right: calc(#{$margin}*3);
+				}
+
+				&.triple-margin--bottom {
+					margin-bottom: calc(#{$margin}*3);
+				}
+
+				&.triple-margin--left {
+					margin-left: calc(#{$margin}*3);
+				}
+
+	}

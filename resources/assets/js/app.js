@@ -230,7 +230,7 @@
                 function requiredFields() {
                     $("input:required, textarea:required").each(function(e) {
                         $(this).parent().addClass("required");
-                        $(this).parent().find("label").append("<span class='form__required'><i class='fa fa-asterisk' aria-label='Asterisk'></i></span>");
+                        // $(this).parent().find("label").append("<span class='form__required'><i class='fa fa-asterisk' aria-label='Asterisk'></i></span>");
                     });
                 }
 
@@ -238,19 +238,9 @@
 
             // Label Handers ===================================================
 
-                function labelHandlers() {
+                function validity() {
 
-                    $("[class*='form__input-wrapper'] input, [class*='form__input-wrapper'] textarea").focusin(function(e) {
-                        $(this).parent().addClass("active");
-                    });
-
-                    $("[class*='form__input-wrapper'] input, [class*='form__input-wrapper'] textarea").focusout(function(e) {
-
-                        // Check for existing value.
-
-                            if ($(this).val() == "") {
-                                $(this).parent().removeClass("active");
-                            }
+                    $("input, textarea").focusout(function(e) {
 
                         // Check Validity
 
@@ -282,7 +272,7 @@
 
                 }
 
-                labelHandlers();
+                validity();
 
         // Individualizing repeater name and id attributes======================
 
@@ -385,7 +375,7 @@
                         requiredFields();
 
                     // Reactivate Labels
-                        labelHandlers();
+                        validity();
 
                     // Reactivate Nested Relatives
                         loadProfileRelatives();
@@ -448,7 +438,7 @@
                         requiredFields();
 
                     // Reactivate Labels
-                        labelHandlers();
+                        validity();
 
                     // Reactivate Nested Relatives
                         loadProfileRelativeDeletion();
@@ -554,7 +544,7 @@
                     wrapper.append(template);
 
                     requiredFields();
-                    labelHandlers();
+                    validity();
 
                 }
 
@@ -595,7 +585,7 @@
                     wrapper.append(template);
 
                     requiredFields();
-                    labelHandlers();
+                    validity();
 
                 }
 
@@ -636,7 +626,7 @@
                     wrapper.append(template);
 
                     requiredFields();
-                    labelHandlers();
+                    validity();
 
                 }
 
@@ -707,7 +697,7 @@
                     wrapper.append(template);
 
                     requiredFields();
-                    labelHandlers();
+                    validity();
                     deleteTaskTrigger();
 
                 }
@@ -785,7 +775,7 @@
                     wrapper.append(template);
 
                     requiredFields();
-                    labelHandlers();
+                    validity();
                     deleteSkillTrigger();
 
                 }
@@ -888,7 +878,7 @@
                     wrapper.append(template);
 
                     requiredFields();
-                    labelHandlers();
+                    validity();
                     deleteQuestionTrigger();
 
                 }

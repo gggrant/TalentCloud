@@ -1,0 +1,90 @@
+// =============================================================================
+
+    // Talent Cloud
+    // Palette
+
+// =============================================================================
+
+// Colours =====================================================================
+	
+	$slate: #1E1E1E;
+	$plum: #5B1647;
+	$wine: #96043E;
+	$crimson: #C90035;
+	$sunrise: #F96548;
+	$white: #FFFFFF;
+
+	$gray-light: #B4B4B4;
+	$gray-dark: #6A6A6A;
+
+	.bg-slate {
+		background: $slate;
+	}
+
+	.bg-plum {
+		background: $plum;
+
+		* {
+			font-weight: 600;
+		}
+
+	}
+
+	.bg-wine {
+		background: $wine;
+
+		* {
+			font-weight: 600;
+		}
+
+	}
+
+	.bg-crimson {
+		background: $crimson;
+
+		* {
+			font-weight: 600;
+		}
+
+	}
+
+	.bg-sunrise {
+		background: $sunrise;
+
+		* {
+			font-weight: 600;
+		}
+
+	}
+
+	.bg-white {
+		background: $white;
+		border: 2px solid $gray-light;
+	}
+
+	.bg-gray--light {
+		background: $gray-light;
+	}
+
+	.bg-gray--dark {
+		background: $gray-dark;
+	}
+
+// Gradients ===================================================================
+
+	%rise {
+		background: $plum;
+		background: -moz-linear-gradient(45deg, $plum 0%, $crimson 100%);
+		background: -webkit-linear-gradient(45deg, $plum 0%,$crimson 100%);
+		background: linear-gradient(45deg, $plum 0%,$crimson 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$plum', endColorstr='$crimson',GradientType=1 );
+	}
+
+	.bg-rise {
+		@extend %rise;
+
+		* {
+			font-weight: 600;
+		}
+		
+	}

@@ -16,6 +16,7 @@ mix.js('resources/assets/js/bootstrap.js', 'public/js')
    .js('resources/assets/js/autocomplete.js', 'public/js')
    .js('resources/assets/js/modernizr.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
+   .sass('resources/assets/sass/core.scss', 'public/css')
    .options({
         processCssUrls: false,
         postCss: [

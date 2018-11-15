@@ -1,0 +1,47 @@
+// =============================================================================
+
+    // Talent Cloud
+    // Style Mastersheet
+
+// =============================================================================
+
+// Core System Styles ==========================================================
+
+	// Settings
+
+		@import "new/system/settings";
+
+	// Media Queries
+
+		@import "new/system/media";
+
+	// Grid
+
+		@import "new/system/grid";
+		@import "new/system/grid-ie";
+
+	// Palette
+
+		@import "new/system/palette";
+
+	// Typography
+
+		@import "new/system/typography";
+
+// Common Styles ===============================================================
+
+	// Design System
+
+		@import "new/blocks/design/title";
+		@import "new/blocks/design/methods";
+		@import "new/blocks/design/palette";
+		@import "new/blocks/design/typography";
+		@import "new/blocks/design/ui";
+
+// Admin Styles ================================================================
+
+// Applicant Styles ============================================================
+
+// Manager Styles ==============================================================
+
+// HR Styles ===================================================================

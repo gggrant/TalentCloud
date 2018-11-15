@@ -1,0 +1,33 @@
+{# =============================================================================
+
+    Talent Cloud
+    Core HTML
+
+============================================================================= #}
+
+<!DOCTYPE html>
+
+<html
+    lang="en">
+
+    <head>
+        
+        <title>{% block title %}{% endblock %}</title>
+
+        {% include "common/head_temp" %}
+
+        {# Note that the </head> and <body> tags are located inside the common/head file due to Google Tag Manager being required on all pages. #}
+
+    {# /head #}
+
+    {# body #}
+
+        {% block body %}{% endblock %}
+
+        {# Scripts #}
+
+            {% include "common/scripts" %}
+
+    </body>
+
+</html>

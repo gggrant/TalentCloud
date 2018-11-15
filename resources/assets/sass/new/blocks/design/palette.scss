@@ -1,0 +1,71 @@
+// =============================================================================
+
+    // Talent Cloud
+    // Design System: Palette
+
+// =============================================================================
+
+.design-system__palette {
+	min-height: 13rem;
+	position: relative;
+
+	div {
+		position: absolute;
+		bottom: 1.5rem;
+		left: 1.5rem;
+	}
+
+}
+
+.design-system__gradient {
+	min-height: 5rem;
+	position: relative;
+
+	div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+}
+
+.design-system__progress {
+	border-radius: 100%;
+	display: block;
+	height: 5rem;
+	margin: 0 auto;
+	position: relative;
+	width: 5rem;
+
+	div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		text-align: center;
+		transform: translate(-50%, -50%);
+	}
+
+}
+
+.design-system__grayscale {
+	background: $slate;
+	border: 2px solid $gray-light;
+	height: 100%;
+	min-height: 10rem;
+	overflow: hidden;
+	width: 100%;
+
+	@media #{$desktop-small} {
+		min-height: 0;
+	}
+
+	div {
+
+		&:nth-child(4) {
+			border: none;
+		}
+
+	}
+
+}

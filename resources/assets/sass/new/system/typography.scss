@@ -1,0 +1,360 @@
+// =============================================================================
+
+    // Talent Cloud
+    // Typography
+
+// =============================================================================
+
+// Fonts =======================================================================
+
+	$font--sans: "Open Sans", sans-serif;
+	$font--script: "Euphoria Script", cursive;
+
+    * {
+    	font-family: $font--sans;
+    	font-size: 1rem;
+    	font-weight: 400;
+    	line-height: 1;
+
+    	&.script {
+    		font-family: $font--script;
+    	}
+
+    }
+
+    ::selection {
+        background: $plum;
+        color: $white;
+    }
+
+// Font Scale ==================================================================
+
+    html,
+    body {
+        font-size: 125%;
+    }
+
+    // $font-scale: 1.414;
+    $font-scale: 1.333;
+
+    $font-scale--regular: 1rem;
+
+    $font-scale--h1: calc(1rem*(#{$font-scale}*(#{$font-scale}*(#{$font-scale}*(#{$font-scale})))));
+    $font-scale--h2: calc(1rem*(#{$font-scale}*(#{$font-scale}*(#{$font-scale}))));
+    $font-scale--h3: calc(1rem*(#{$font-scale}*(#{$font-scale})));
+    $font-scale--h4: calc(1rem*(#{$font-scale}));
+    $font-scale--h5: 1rem;
+    $font-scale--small: calc(1rem*(#{$font-scale}/2));
+
+// Headings ====================================================================
+
+	h1 {
+		font-size: $font-scale--h1;
+	}
+
+	h2 {
+		font-size: $font-scale--h2;
+	}
+
+	h3 {
+		font-size: $font-scale--h3;
+	}
+
+	h4 {
+		font-size: $font-scale--h4;
+	}
+
+	h5 {
+		font-size: $font-scale--h5;
+	}
+
+	h1, h2, h3, h4, h5 {
+		color: $slate;
+
+		&.plum {
+			color: $plum;
+		}
+
+		&.wine {
+			color: $wine;
+		}
+
+		&.crimson {
+			color: $crimson;
+		}
+
+		&.white {
+			color: $white;
+		}
+
+		&.bold {
+			font-weight: 800;
+		}
+
+	}
+
+// Copy & Misc =================================================================
+
+	p {
+		color: transparentize($slate, .2);
+		line-height: 1.5;
+
+		&.plum {
+			color: $plum;
+		}
+
+		&.wine {
+			color: $wine;
+		}
+
+		&.crimson {
+			color: $crimson;
+		}
+
+		&.white {
+			color: $white;
+		}
+
+		&.bold {
+			font-weight: 800;
+		}
+
+	}
+
+	span {
+		color: $slate;
+		font-size: inherit;
+		font-weight: inherit;
+
+		&.plum {
+			color: $plum;
+		}
+
+		&.wine {
+			color: $wine;
+		}
+
+		&.crimson {
+			color: $crimson;
+		}
+
+		&.white {
+			color: $white;
+		}
+
+		&.bold {
+			font-weight: 800;
+		}
+
+	}
+
+	a {
+		color: inherit;
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		text-decoration: underline;
+	}
+	
+	hr {
+		background: $crimson;
+		border: none;
+		height: 2px;
+		width: 100%;
+	}
+
+// Forms =======================================================================
+
+	form {
+
+		// Grid Settings
+
+			.flex-grid.gutter {
+
+				.box {
+					padding-bottom: 0;
+				}
+
+			}
+
+		// Errors & Alerts
+
+			.error,
+			.alert {
+				border-radius: 5px;
+				margin: 2rem 0;
+				padding: 1.5rem;
+				position: relative;
+
+				@media #{$tablet-portrait} {
+					padding: 1.5rem 1.5rem 1.5rem 6rem;
+				}
+
+				span {
+					font-weight: 600;
+					line-height: 1.5;
+				}
+
+				img {
+					display: none;
+					position: absolute;
+					top: 50%;
+					left: 3rem;
+					transform: translate(-50%, -50%);
+					width: 1.5rem;
+
+					@media #{$tablet-portrait} {
+						display: block;
+					}
+
+				}
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+			}
+
+			.error {
+				background: transparentize($crimson, .8);
+				border: 2px solid $crimson;
+
+				span {
+					color: $crimson;
+				}
+
+			}
+
+			.alert {
+				background: transparentize($plum, .8);
+				border: 2px solid $plum;
+
+				span {
+					color: $plum;
+				}
+
+			}
+
+		// Inputs
+
+			.input {
+				position: relative;
+
+				label {
+					display: block;
+					font-size: $font-scale--small;
+					margin-bottom: .5rem;
+				}
+
+				input {
+					border: 1px solid $gray-light;
+					border-radius: 5px;
+					display: block;
+					outline: none;
+					margin-bottom: 1.4rem;
+					padding: 1rem 1.5rem;
+					width: 100%;
+
+					&:focus {
+						border: 1px solid $plum;
+					}
+
+				}
+
+				textarea {
+					border: 1px solid $gray-light;
+					border-radius: 5px;
+					display: block;
+					outline: none;
+					margin-bottom: 1.4rem;
+					max-width: 100%;
+					min-height: 10rem;
+					padding: 1rem 1.5rem;
+					width: 100%;
+
+					&:focus {
+						border: 1px solid $plum;
+					}
+
+				}
+
+				.select {
+					position: relative;
+
+					img {
+						position: absolute;
+						top: 50%;
+						right: 1rem;
+						pointer-events: none;
+						transform: translate(0, -50%);
+					}
+
+					select {
+						appearance: none;
+						border: 1px solid $gray-light;
+						border-radius: 5px;
+						display: block;
+						outline: none;
+						margin-bottom: 1.4rem;
+						padding: 1rem 1.5rem;
+						width: 100%;
+
+						&:focus {
+							border: 1px solid $plum;
+						}
+
+					}
+
+				}
+
+				.required-label {
+					color: $crimson;
+					font-size: $font-scale--small;
+					position: absolute;
+					top: .5rem;
+					right: .5rem;
+
+					@media #{$tablet-landscape} {
+			    		top: 1rem;
+						right: 1rem;
+			    	}
+
+				}
+
+				.error-copy {
+					color: $crimson;
+					display: none;
+					font-size: $font-scale--small;
+					position: absolute;
+					bottom: 0;
+					left: .5rem;
+
+					@media #{$tablet-landscape} {
+			    		bottom: 0;
+						left: 1rem;
+			    	}
+
+				}
+
+				&.invalid {
+
+					input,
+					textarea {
+						border: 1px solid $crimson;
+					}
+
+					.error-copy {
+						display: block;
+					}
+
+				}
+
+			}
+
+	}
+
+// Buttons =====================================================================
