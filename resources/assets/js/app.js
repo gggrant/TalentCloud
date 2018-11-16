@@ -29,7 +29,7 @@
 
         var ua = navigator.userAgent;
         ua = ua.toString();
-        console.log("hello");
+        // console.log("hello");
         $('body').attr('id', ua);
 
     $(document).ready(function() {
@@ -236,6 +236,22 @@
 
                 requiredFields();
 
+            // Password Reveal
+
+                $(".password button").on("click", function(e) {
+
+                    e.preventDefault();
+
+                    var x = $(this).siblings("input");
+
+                    if (x.attr("type") === "password") {
+                        x.attr("type", "text");
+                    } else {
+                        x.attr("type", "password");
+                    }
+
+                });
+
             // Label Handers ===================================================
 
                 function validity() {
@@ -247,12 +263,12 @@
                             if ($(this).isValid() == true) {
 
                                 if ($(this).val() == "" || $(this).attr("type") == "password") {
-                                    $(this).parent().removeClass("valid");
-                                    $(this).parent().removeClass("invalid");
+                                    $(this).parent().parent().removeClass("valid");
+                                    $(this).parent().parent().removeClass("invalid");
                                 }
                                 else {
-                                    $(this).parent().addClass("valid");
-                                    $(this).parent().removeClass("invalid");
+                                    $(this).parent().parent().addClass("valid");
+                                    $(this).parent().parent().removeClass("invalid");
                                 }
 
                             }
@@ -262,8 +278,8 @@
                                     return false;
                                 }
                                 else {
-                                    $(this).parent().addClass("invalid");
-                                    $(this).parent().removeClass("valid");
+                                    $(this).parent().parent().addClass("invalid");
+                                    $(this).parent().parent().removeClass("valid");
                                 }
 
                             }

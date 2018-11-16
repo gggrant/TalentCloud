@@ -7,18 +7,18 @@
 
 // Fonts =======================================================================
 
-	$font--sans: "Open Sans", sans-serif;
-	$font--script: "Euphoria Script", cursive;
+    $font--sans: "Open Sans", sans-serif;
+    $font--script: "Euphoria Script", cursive;
 
     * {
-    	font-family: $font--sans;
-    	font-size: 1rem;
-    	font-weight: 400;
-    	line-height: 1;
+        font-family: $font--sans;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1;
 
-    	&.script {
-    		font-family: $font--script;
-    	}
+        &.script {
+            font-family: $font--script;
+        }
 
     }
 
@@ -31,7 +31,7 @@
 
     html,
     body {
-        font-size: 125%;
+        font-size: 120%;
     }
 
     // $font-scale: 1.414;
@@ -44,317 +44,568 @@
     $font-scale--h3: calc(1rem*(#{$font-scale}*(#{$font-scale})));
     $font-scale--h4: calc(1rem*(#{$font-scale}));
     $font-scale--h5: 1rem;
-    $font-scale--small: calc(1rem*(#{$font-scale}/2));
+    $font-scale--small: calc(1rem/(#{$font-scale}));
 
 // Headings ====================================================================
 
-	h1 {
-		font-size: $font-scale--h1;
-	}
+    h1 {
+        font-size: $font-scale--h1;
+    }
 
-	h2 {
-		font-size: $font-scale--h2;
-	}
+    h2 {
+        font-size: $font-scale--h2;
+    }
 
-	h3 {
-		font-size: $font-scale--h3;
-	}
+    h3 {
+        font-size: $font-scale--h3;
+    }
 
-	h4 {
-		font-size: $font-scale--h4;
-	}
+    h4 {
+        font-size: $font-scale--h4;
+    }
 
-	h5 {
-		font-size: $font-scale--h5;
-	}
+    h5 {
+        font-size: $font-scale--h5;
+    }
 
-	h1, h2, h3, h4, h5 {
-		color: $slate;
+    h1, h2, h3, h4, h5 {
+        color: $slate;
 
-		&.plum {
-			color: $plum;
-		}
+        &.plum {
+            color: $plum;
+        }
 
-		&.wine {
-			color: $wine;
-		}
+        &.wine {
+            color: $wine;
+        }
 
-		&.crimson {
-			color: $crimson;
-		}
+        &.crimson {
+            color: $crimson;
+        }
 
-		&.white {
-			color: $white;
-		}
+        &.white {
+            color: $white;
+        }
 
-		&.bold {
-			font-weight: 800;
-		}
+        &.bold {
+            font-weight: 800;
+        }
 
-	}
+    }
 
 // Copy & Misc =================================================================
 
-	p {
-		color: transparentize($slate, .2);
-		line-height: 1.5;
+    p {
+        color: transparentize($slate, .2);
+        line-height: 1.5;
 
-		&.plum {
-			color: $plum;
-		}
+        &.plum {
+            color: $plum;
+        }
 
-		&.wine {
-			color: $wine;
-		}
+        &.wine {
+            color: $wine;
+        }
 
-		&.crimson {
-			color: $crimson;
-		}
+        &.crimson {
+            color: $crimson;
+        }
 
-		&.white {
-			color: $white;
-		}
+        &.white {
+            color: $white;
+        }
 
-		&.bold {
-			font-weight: 800;
-		}
+        &.bold {
+            font-weight: 800;
+        }
 
-	}
+    }
 
-	span {
-		color: $slate;
-		font-size: inherit;
-		font-weight: inherit;
+    span {
+        color: $slate;
+        font-size: inherit;
+        font-weight: inherit;
 
-		&.plum {
-			color: $plum;
-		}
+        &.plum {
+            color: $plum;
+        }
 
-		&.wine {
-			color: $wine;
-		}
+        &.wine {
+            color: $wine;
+        }
 
-		&.crimson {
-			color: $crimson;
-		}
+        &.crimson {
+            color: $crimson;
+        }
 
-		&.white {
-			color: $white;
-		}
+        &.white {
+            color: $white;
+        }
 
-		&.bold {
-			font-weight: 800;
-		}
+        &.bold {
+            font-weight: 800;
+        }
 
-	}
+        &.block {
+            display: block;
+        }
 
-	a {
-		color: inherit;
-		font-family: inherit;
-		font-size: inherit;
-		font-weight: inherit;
-		text-decoration: underline;
-	}
-	
-	hr {
-		background: $crimson;
-		border: none;
-		height: 2px;
-		width: 100%;
-	}
+    }
+
+    a {
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        text-decoration: underline;
+    }
+    
+    hr {
+        background: $crimson;
+        border: none;
+        height: 2px;
+        width: 100%;
+    }
 
 // Forms =======================================================================
 
-	form {
+    form {
+        padding: .5rem 0;
 
-		// Grid Settings
+        @media #{$tablet-portrait} {
+            padding: 1rem 0;
+        }
 
-			.flex-grid.gutter {
+        // Errors & Alerts
 
-				.box {
-					padding-bottom: 0;
-				}
+            .error,
+            .alert {
+                border-radius: 5px;
+                margin: 2rem 0;
+                padding: 1.5rem;
+                position: relative;
 
-			}
+                @media #{$tablet-portrait} {
+                    padding: 1.5rem 1.5rem 1.5rem 6rem;
+                }
 
-		// Errors & Alerts
+                span {
+                    font-weight: 600;
+                    line-height: 1.5;
+                }
 
-			.error,
-			.alert {
-				border-radius: 5px;
-				margin: 2rem 0;
-				padding: 1.5rem;
-				position: relative;
+                img {
+                    display: none;
+                    position: absolute;
+                    top: 50%;
+                    left: 3rem;
+                    transform: translate(-50%, -50%);
+                    width: 1.5rem;
 
-				@media #{$tablet-portrait} {
-					padding: 1.5rem 1.5rem 1.5rem 6rem;
-				}
+                    @media #{$tablet-portrait} {
+                        display: block;
+                    }
 
-				span {
-					font-weight: 600;
-					line-height: 1.5;
-				}
+                }
 
-				img {
-					display: none;
-					position: absolute;
-					top: 50%;
-					left: 3rem;
-					transform: translate(-50%, -50%);
-					width: 1.5rem;
+                &:first-child {
+                    margin-top: 0;
+                }
 
-					@media #{$tablet-portrait} {
-						display: block;
-					}
+                &:last-child {
+                    margin-bottom: 0;
+                }
 
-				}
+            }
 
-				&:first-child {
-					margin-top: 0;
-				}
+            .error {
+                background: transparentize($crimson, .8);
+                border: 2px solid $crimson;
 
-				&:last-child {
-					margin-bottom: 0;
-				}
+                span {
+                    color: $crimson;
+                }
 
-			}
+            }
 
-			.error {
-				background: transparentize($crimson, .8);
-				border: 2px solid $crimson;
+            .alert {
+                background: transparentize($plum, .8);
+                border: 2px solid $plum;
 
-				span {
-					color: $crimson;
-				}
+                span {
+                    color: $plum;
+                }
 
-			}
+            }
 
-			.alert {
-				background: transparentize($plum, .8);
-				border: 2px solid $plum;
+        // Fieldsets
 
-				span {
-					color: $plum;
-				}
+            .flex-grid+.flex-grid {
+                padding-top: 1rem;
+            }
 
-			}
+            .flex-grid+fieldset,
+            fieldset+fieldset,
+            fieldset+.flex-grid {
+                padding-top: 2rem;
+            }
 
-		// Inputs
+            fieldset {
+                appearance: none;
+                border: none;
 
-			.input {
-				position: relative;
+                legend {
+                    color: $plum;
+                    font-weight: 800;
+                }
 
-				label {
-					display: block;
-					font-size: $font-scale--small;
-					margin-bottom: .5rem;
-				}
+            }
 
-				input {
-					border: 1px solid $gray-light;
-					border-radius: 5px;
-					display: block;
-					outline: none;
-					margin-bottom: 1.4rem;
-					padding: 1rem 1.5rem;
-					width: 100%;
+        // Copy
 
-					&:focus {
-						border: 1px solid $plum;
-					}
+            .copy {
+                padding-bottom: 1.5rem !important;
+            }
 
-				}
+        // Inputs
 
-				textarea {
-					border: 1px solid $gray-light;
-					border-radius: 5px;
-					display: block;
-					outline: none;
-					margin-bottom: 1.4rem;
-					max-width: 100%;
-					min-height: 10rem;
-					padding: 1rem 1.5rem;
-					width: 100%;
+            .input {
+                padding-bottom: 0 !important;
+                position: relative;
 
-					&:focus {
-						border: 1px solid $plum;
-					}
+                label {
+                    display: block;
+                    font-size: $font-scale--small;
+                    margin-bottom: .5rem;
+                }
 
-				}
+                .required-label {
+                    color: $crimson;
+                    font-size: $font-scale--small;
+                    position: absolute;
+                    top: .5rem;
+                    right: .5rem;
 
-				.select {
-					position: relative;
+                    @media #{$tablet-landscape} {
+                        top: 1rem;
+                        right: 1rem;
+                    }
 
-					img {
-						position: absolute;
-						top: 50%;
-						right: 1rem;
-						pointer-events: none;
-						transform: translate(0, -50%);
-					}
+                }
 
-					select {
-						appearance: none;
-						border: 1px solid $gray-light;
-						border-radius: 5px;
-						display: block;
-						outline: none;
-						margin-bottom: 1.4rem;
-						padding: 1rem 1.5rem;
-						width: 100%;
+                .input-wrapper {
+                    position: relative;
 
-						&:focus {
-							border: 1px solid $plum;
-						}
+                    input {
+                        border: 1px solid $gray-light;
+                        border-radius: 5px;
+                        display: block;
+                        outline: none;
+                        margin-bottom: 1.5rem;
+                        padding: 1rem 1.5rem;
+                        width: 100%;
 
-					}
+                        &:focus {
+                            border: 1px solid $plum;
+                        }
 
-				}
+                        &[type="date"] {
+                            padding: calc(1rem - 1.5px) calc(1.5rem - 1.5px);
+                        }
 
-				.required-label {
-					color: $crimson;
-					font-size: $font-scale--small;
-					position: absolute;
-					top: .5rem;
-					right: .5rem;
+                    }
 
-					@media #{$tablet-landscape} {
-			    		top: 1rem;
-						right: 1rem;
-			    	}
+                    textarea {
+                        border: 1px solid $gray-light;
+                        border-radius: 5px;
+                        display: block;
+                        outline: none;
+                        margin-bottom: 1.5rem;
+                        max-width: 100%;
+                        min-height: 10rem;
+                        min-width: 100%;
+                        padding: 1rem 1.5rem;
+                        width: 100%;
 
-				}
+                        &:focus {
+                            border: 1px solid $plum;
+                        }
 
-				.error-copy {
-					color: $crimson;
-					display: none;
-					font-size: $font-scale--small;
-					position: absolute;
-					bottom: 0;
-					left: .5rem;
+                    }
 
-					@media #{$tablet-landscape} {
-			    		bottom: 0;
-						left: 1rem;
-			    	}
+                    .select {
+                        position: relative;
 
-				}
+                        img {
+                            position: absolute;
+                            top: 50%;
+                            right: 1rem;
+                            pointer-events: none;
+                            transform: translate(0, -50%);
+                        }
 
-				&.invalid {
+                        select {
+                            appearance: none;
+                            border: 1px solid $gray-light;
+                            border-radius: 5px;
+                            display: block;
+                            outline: none;
+                            margin-bottom: 1.4rem;
+                            padding: calc(1rem + 3.5px) calc(1.5rem + 3.5px);
+                            width: 100%;
 
-					input,
-					textarea {
-						border: 1px solid $crimson;
-					}
+                            &:focus {
+                                border: 1px solid $plum;
+                            }
 
-					.error-copy {
-						display: block;
-					}
+                        }
 
-				}
+                    }
 
-			}
+                    .password {
+                        position: relative;
 
-	}
+                        button {
+                            appearance: none;
+                            background: none;
+                            border: none;
+                            cursor: pointer;
+                            position: absolute;
+                            top: 50%;
+                            right: 1rem;
+                            transform: translate(0, -50%);
+                        }
+
+                    }
+
+                    .checkbox-group {
+                        margin-top: .5rem;
+                        margin-bottom: 1.5rem;
+
+                        label {
+                            margin: 0 !important;
+                            padding-top: .5rem !important;
+                            padding-bottom: .5rem !important;
+
+                            input {
+                                display: inline-block;
+                                margin: 0;
+                                width: auto;
+                            }
+
+                            span {
+                                display: inline-block;
+                                font-size: $font-scale--regular;
+                                margin: 0 0 0 .5rem;
+                            }
+
+                        }
+
+                    }
+
+                    .radio-group {
+                        margin-bottom: 1.5rem;
+
+                        label {
+                            cursor: pointer;
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            position: relative;
+
+                            input {
+                                position: absolute;
+                                left: -1000vh;
+
+                                &:focus + span {
+                                    // border-color: $palette--blue;
+                                }
+
+                                &:checked + span {
+                                    background: $plum;
+                                    color: $white;
+                                    font-weight: 800;
+                                }
+
+                            }
+
+                            span {
+                                align-items: center;
+                                border-top: none;
+                                border-right: 1px solid $gray-light;
+                                border-bottom: 1px solid $gray-light;
+                                border-left: 1px solid $gray-light;
+                                display: flex;
+                                font-size: $font-scale--regular;
+                                height: 100%;
+                                justify-content: center;
+                                padding: 1rem 1.5rem;
+                                pointer-events: none;
+                                text-align: center;
+                                word-wrap: break-word;
+
+                                @media #{$tablet-portrait} {
+                                    border-top: 1px solid $gray-light;
+                                    border-right: 1px solid $gray-light;
+                                    border-bottom: 1px solid $gray-light;
+                                    border-left: none;
+                                }
+
+                                @media #{$desktop-small} {
+                                    word-wrap: normal;
+                                }
+
+                            }
+
+                            &:first-of-type {
+
+                                span {
+                                    border-top: 1px solid $gray-light;
+                                    border-radius: 5px 5px 0 0;
+
+                                    @media #{$tablet-portrait} {
+                                        border-left: 1px solid $gray-light;
+                                        border-radius: 5px 0 0 5px;
+                                    }
+                                    
+                                }
+
+                            }
+
+                            &:last-of-type {
+
+                                span {
+                                    border-radius: 0 0 5px 5px;
+
+                                    @media #{$tablet-portrait} {
+                                        border-radius: 0 5px 5px 0;
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                    .error-copy {
+                        color: $crimson;
+                        display: none;
+                        font-size: $font-scale--small;
+                        position: absolute;
+                        top: calc(100% + .5rem);
+                        left: 0;
+                    }
+
+                }
+
+                &.invalid {
+
+                    input,
+                    textarea {
+                        border: 1px solid $crimson;
+                    }
+
+                    .error-copy {
+                        display: block;
+                    }
+
+                }
+
+            }
+
+        // Actions
+
+            .actions {
+
+                .box {
+                    text-align: center;
+
+                    @media #{$phone-landscape} {
+                        text-align: left;
+                    }
+
+                    &:last-child {
+
+                        @media #{$phone-landscape} {
+                            text-align: right;
+                        }
+
+                    }
+
+                }
+
+            }
+
+    }
 
 // Buttons =====================================================================
+
+    .button-grid {
+        margin: -.5rem calc(-.5rem + 2px);
+
+        [class*="button--"] {
+            margin: .5rem calc(.5rem - 2px);
+        }
+
+    }
+
+    [class*="button--"] {
+        appearance: none;
+        background: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: calc(1rem + 3.5px) 1.5rem;
+
+        &[class*="solid--"] {
+            border: 1px solid rgba(255, 255, 255, 0);
+            font-weight: 800;
+            
+            &[class*="plum"] {
+                background: $plum;
+                color: $white;
+            }
+
+            &[class*="wine"] {
+                background: $wine;
+                color: $white;
+            }
+
+            &[class*="crimson"] {
+                background: $crimson;
+                color: $white;
+            }
+
+            &[class*="sunrise"] {
+                background: $sunrise;
+                color: $white;
+            }
+
+        }
+
+        &[class*="outline--"] {
+            
+            &[class*="plum"] {
+                border: 1px solid $plum;
+                color: $plum;
+            }
+
+            &[class*="wine"] {
+                border: 1px solid $wine;
+                color: $wine;
+            }
+
+            &[class*="crimson"] {
+                border: 1px solid $crimson;
+                color: $crimson;
+            }
+
+            &[class*="sunrise"] {
+                border: 1px solid $sunrise;
+                color: $sunrise;
+            }
+
+        }
+
+    }

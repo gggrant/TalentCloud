@@ -55,6 +55,28 @@ iframe {
 
 			$padding: 1.5rem;
 
+			// Half
+
+				&.half-padding {
+					padding: calc(#{$padding} / 2);
+				}
+
+				&.half-padding--top {
+					padding-top: calc(#{$padding} / 2);
+				}
+
+				&.half-padding--right {
+					padding-right: calc(#{$padding} / 2);
+				}
+
+				&.half-padding--bottom {
+					padding-bottom: calc(#{$padding} / 2);
+				}
+
+				&.half-padding--left {
+					padding-left: calc(#{$padding} / 2);
+				}
+
 			// Single 
 
 				&.padding {
@@ -124,6 +146,28 @@ iframe {
 		// Margin ==============================================================
 
 			$margin: 1.5rem;
+
+			// Half
+
+				&.half-margin {
+					margin: calc(#{$margin} / 2);
+				}
+
+				&.half-margin--top {
+					margin-top: calc(#{$margin} / 2);
+				}
+
+				&.half-margin--right {
+					margin-right: calc(#{$margin} / 2);
+				}
+
+				&.half-margin--bottom {
+					margin-bottom: calc(#{$margin} / 2);
+				}
+
+				&.half-margin--left {
+					margin-left: calc(#{$margin} / 2);
+				}
 
 			// Single 
 
