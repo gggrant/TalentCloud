@@ -1,0 +1,28 @@
+// =============================================================================
+
+    // Talent Cloud
+    // Sidebars
+
+// =============================================================================
+
+.sidebar {
+	position: sticky;
+	top: 4rem;
+
+	a {
+		display: block;
+		margin: 0 0 1rem;
+	}
+
+}
+
+.sidebar-anchor {
+
+	&::before {
+        content: " ";
+        display: block;
+        height: 4rem;
+        margin: -4rem 0 0 0;
+    }
+
+}

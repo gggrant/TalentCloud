@@ -8,6 +8,7 @@
 // Fonts =======================================================================
 
     $font--sans: "Open Sans", sans-serif;
+    $font--mono: "Consolas", mono-space;
     $font--script: "Euphoria Script", cursive;
 
     * {
@@ -43,7 +44,7 @@
     $font-scale--h2: calc(1rem*(#{$font-scale}*(#{$font-scale}*(#{$font-scale}))));
     $font-scale--h3: calc(1rem*(#{$font-scale}*(#{$font-scale})));
     $font-scale--h4: calc(1rem*(#{$font-scale}));
-    $font-scale--h5: 1rem;
+    $font-scale--h5: $font-scale--regular;
     $font-scale--small: calc(1rem/(#{$font-scale}));
 
 // Headings ====================================================================
@@ -96,7 +97,8 @@
 // Copy & Misc =================================================================
 
     p {
-        color: transparentize($slate, .2);
+        // color: transparentize($slate, .2);
+        color: $slate;
         line-height: 1.5;
 
         &.plum {
@@ -158,12 +160,49 @@
         font-size: inherit;
         font-weight: inherit;
         text-decoration: underline;
+
+        &.plum {
+            color: $plum;
+        }
+
+        &.wine {
+            color: $wine;
+        }
+
+        &.crimson {
+            color: $crimson;
+        }
+
+        &.white {
+            color: $white;
+        }
+
+        &.bold {
+            font-weight: 800;
+        }
+        
+    }
+
+    pre {
+        background: $slate;
+        border-radius: 5px;
+        color: $white;
+        font-family: $font--mono;
+        line-height: 1.2;
+        overflow: auto;
+        padding: 1.5rem;
+
+        &::selection {
+            background: $white;
+            color: $slate;
+        }
+
     }
     
     hr {
-        background: $crimson;
+        background: $gray-light;
         border: none;
-        height: 2px;
+        height: 1px;
         width: 100%;
     }
 
@@ -220,7 +259,7 @@
 
             .error {
                 background: transparentize($crimson, .8);
-                border: 2px solid $crimson;
+                border: 1px solid $crimson;
 
                 span {
                     color: $crimson;
@@ -230,7 +269,7 @@
 
             .alert {
                 background: transparentize($plum, .8);
-                border: 2px solid $plum;
+                border: 1px solid $plum;
 
                 span {
                     color: $plum;

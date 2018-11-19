@@ -1,0 +1,15 @@
+html,
+body {
+    font-size: 120%;
+}
+
+$font-scale: 1.333;
+
+$font-scale--regular: 1rem;
+
+$font-scale--h1: calc(1rem*(#{$font-scale}*(#{$font-scale}*(#{$font-scale}*(#{$font-scale})))));
+$font-scale--h2: calc(1rem*(#{$font-scale}*(#{$font-scale}*(#{$font-scale}))));
+$font-scale--h3: calc(1rem*(#{$font-scale}*(#{$font-scale})));
+$font-scale--h4: calc(1rem*(#{$font-scale}));
+$font-scale--h5: $font-scale--regular;
+$font-scale--small: calc(1rem/(#{$font-scale}));

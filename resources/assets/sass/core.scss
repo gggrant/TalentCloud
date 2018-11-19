@@ -30,13 +30,19 @@
 
 // Common Styles ===============================================================
 
-	// Design System
+	// Components
 
-		@import "new/blocks/design/title";
-		@import "new/blocks/design/methods";
-		@import "new/blocks/design/palette";
-		@import "new/blocks/design/typography";
-		@import "new/blocks/design/ui";
+		@import "new/components/card";
+		@import "new/components/job-summary";
+		@import "new/components/sidebar";
+
+	// Template: Design System
+
+		@import "new/templates/design-system/title";
+		@import "new/templates/design-system/methods";
+		@import "new/templates/design-system/palette";
+		@import "new/templates/design-system/typography";
+		@import "new/templates/design-system/ui";
 
 // Admin Styles ================================================================
 

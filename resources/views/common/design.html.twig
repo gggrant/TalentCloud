@@ -8,840 +8,1106 @@
 
 {% block title %}
 
-	Talent Cloud's Design System
+    Talent Cloud's Design System
 
 {% endblock %}
 
 {% block body %}
 
-	{# Title #}
+    {# Title #}
 
-		<div class="bg-slate center triple-padding">
+        <div class="bg-slate center triple-padding">
 
-			<h1 class="bold white margin--bottom">Talent Cloud</h1>
+            <h1 class="bold white margin--bottom">Talent Cloud</h1>
 
-			<h5 class="white">Design Framework</h5>
+            <h5 class="white">Design Framework</h5>
 
-		</div>
+        </div>
 
-	{# Methodologies #}
+    <div class="bg-contrast">
 
-		<div class="container--layout triple-padding--top">
+        <div class="design-system container--layout">
 
-			<h2 class="center margin--bottom">Methods</h2>
+            <div class="flex-grid gutter">
 
-			<hr>
+                <div class="box b-full tl-1of4">
 
-		</div>
+                    <div class="sidebar double-margin--top double-margin--bottom">
 
-		<div class="container--copy double-padding--top">
+                        <h3 class="bold margin--bottom">Talent Cloud</h3>
 
-			<p>Things!</p>
+                        <a
+                            href="#methodologies"
+                            title="Visit the methodologies section.">
+                            Methodologies
+                        </a>
 
-		</div>
+                        <a
+                            href="#colour"
+                            title="Visit the colour section.">
+                            Colour
+                        </a>
 
-	{# Palette #}
+                        <a
+                            href="#typography"
+                            title="Visit the typography section.">
+                            Typography
+                        </a>
 
-		<div class="container--layout triple-padding--top">
+                        <a
+                            href="#forms"
+                            title="Visit the forms section.">
+                            Forms
+                        </a>
 
-			<h2 class="center margin--bottom">Palette</h2>
+                        <a
+                            href="#components"
+                            title="Visit the components section.">
+                            Components
+                        </a>
 
-			<hr class="double-margin--bottom">
+                    </div>
 
-			<div class="flex-grid gutter">
+                </div>
 
-				{# Slate #}
+                <div class="box b-full tl-3of4">
 
-					<div class="box gutter b-1of2 tp-1of3 dm-1of6">
+                    <div class="bg-white double-padding double-margin--top double-margin--bottom rounded">
 
-						<div class="design-system__palette rounded bg-slate">
+                        {# Methodologies #}
 
-							<div>
+                            <div>
 
-								<h4 class="bold white margin--bottom">Slate</h4>
+                                <a class="sidebar-anchor" id="methodologies"></a>
 
-								<span class="white">#1E1E1E</span>
+                                <h2 class="margin--bottom">Methodologies</h2>
 
-							</div>
+                                <hr>
 
-						</div>
+                            </div>
 
-					</div>
+                            <div class="double-padding--top">
 
-				{# Plum #}
+                                <h3 class="margin--bottom">Our Design Philosophy</h3>
 
-					<div class="box gutter b-1of2 tp-1of3 dm-1of6">
+                                <p>Things</p>
 
-						<div class="design-system__palette rounded bg-plum">
+                                <h3 class="double-margin--top margin--bottom">Iterative Design</h3>
 
-							<div>
+                                <p>Things</p>
 
-								<h4 class="bold white margin--bottom">Plum</h4>
+                                <h3 class="double-margin--top margin--bottom">Open by Default</h3>
 
-								<span class="white">#5B1647</span>
+                                <p>Things</p>
 
-							</div>
+                            </div>
 
-						</div>
+                        {# Colour #}
 
-					</div>
+                            <div class="triple-padding--top">
 
-				{# Wine #}
+                                <a class="sidebar-anchor" id="colour"></a>
 
-					<div class="box gutter b-1of2 tp-1of3 dm-1of6">
+                                <h2 class="margin--bottom">Colour</h2>
 
-						<div class="design-system__palette rounded bg-wine">
+                                <hr class="double-margin--bottom">
 
-							<div>
+                                <div class="flex-grid rounded double-margin--bottom">
 
-								<h4 class="bold white margin--bottom">Wine</h4>
-
-								<span class="white">#96043E</span>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				{# Crimson #}
-
-					<div class="box gutter b-1of2 tp-1of3 dm-1of6">
-
-						<div class="design-system__palette rounded bg-crimson">
-
-							<div>
-
-								<h4 class="bold white margin--bottom">Crimson</h4>
-
-								<span class="white">#C90035</span>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				{# Sunrise #}
-
-					<div class="box gutter b-1of2 tp-1of3 dm-1of6">
-
-						<div class="design-system__palette rounded bg-sunrise">
-
-							<div>
-
-								<h4 class="bold white margin--bottom">Sunrise</h4>
-
-								<span class="white">#F96548</span>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				{# White #}
-
-					<div class="box gutter b-1of2 tp-1of3 dm-1of6">
-
-						<div class="design-system__palette rounded bg-white">
-
-							<div>
-
-								<h4 class="bold margin--bottom">White</h4>
-
-								<span>#FFFFFF</span>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				{# Color Progression #}
-
-					<div class="box gutter b-full ds-4of6">
-
-						<div class="flex-grid gutter">
-
-							{# Gradient #}
-
-								<div class="box b-full">
-
-									<div class="design-system__gradient rounded bg-rise">
-
-										<div>
-
-											<span class="white">Gradient</span>
-
-										</div>
-
-									</div>
-
-								</div>
-
-							{# Stepped #}
-
-								<div class="box b-1of2 tp-1of4">
-
-									<div class="design-system__progress bg-plum">
-
-										<div>
-
-											<span class="white bold">Step<br>01</span>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="box b-1of2 tp-1of4">
-
-									<div class="design-system__progress bg-wine">
-
-										<div>
-
-											<span class="white bold">Step<br>02</span>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="box b-1of2 tp-1of4">
-
-									<div class="design-system__progress bg-crimson">
-
-										<div>
-
-											<span class="white bold">Step<br>03</span>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="box b-1of2 tp-1of4">
-
-									<div class="design-system__progress bg-sunrise">
-
-										<div>
-
-											<span class="white bold">Step<br>04</span>
-
-										</div>
-
-									</div>
-
-								</div>
-
-						</div>
-
-					</div>
-
-				{# Grayscale #}
-
-					<div class="box gutter fit b-full ds-2of6">
-
-						<div class="flex-grid rounded design-system__grayscale">
-
-							<div class="box fit b-1of2">
-
-							</div>
-
-							<div class="box fit b-1of2 bg-gray--dark">
-								
-							</div>
-
-							<div class="box fit b-1of2 bg-gray--light">
-								
-							</div>
-
-							<div class="box fit b-1of2 bg-white">
-								
-							</div>
-
-						</div>
-
-					</div>
-
-			</div>
-
-		</div>
-
-	{# Typography #}
-
-		<div class="container--layout triple-padding--top">
-
-			<h2 class="center margin--bottom">Typography</h2>
-
-			<hr>
-
-		</div>
-
-		<div class="container--copy double-padding--top">
-
-			<h3 class="bold margin--bottom">Open Sans by Steve Matteson</h3>
-
-			<h4 class="crimson margin--bottom">Apache License 2.0</h4>
-
-			<p class="margin--bottom">Open Sans is a humanist sans serif typeface designed by Steve Matteson, Type Director of Ascender Corp. This version contains the complete 897 character set, which includes the standard ISO Latin 1, Latin CE, Greek and Cyrillic character sets. <a href="https://fonts.google.com/specimen/Open+Sans" target="_blank" title="Visit Open Sans on Google Fonts">Open Sans</a> was designed with an upright stress, open forms and a neutral, yet friendly appearance. It was optimized for print, web, and mobile interfaces, and has excellent legibility characteristics in its letterforms.</p>
-
-			<p class="double-margin--bottom">Talent Cloud uses a 1.333 type scale for its typography.</p>
-
-			<h1 class="margin--bottom">H1: Thin, <span class="bold">Bold</span>, <span class="crimson">Coloured</span></h1>
-
-			<h2 class="margin--bottom">H2: Thin, <span class="bold">Bold</span>, <span class="crimson">Coloured</span></h2>
-
-			<h3 class="margin--bottom">H3: Thin, <span class="bold">Bold</span>, <span class="crimson">Coloured</span></h3>
-
-			<h4 class="margin--bottom">H4: Thin, <span class="bold">Bold</span>, <span class="crimson">Coloured</span></h4>
-
-			<h5 class="double-margin--bottom">H5: Thin, <span class="bold">Bold</span>, <span class="crimson">Coloured</span></h5>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae felis at purus molestie luctus. Duis maximus magna ante, id pellentesque purus vestibulum vel. Aliquam erat volutpat. Aliquam mattis turpis a ligula blandit gravida. Fusce lobortis tempus augue quis venenatis. Proin sed lobortis purus. Donec vitae libero id lectus ultrices dignissim convallis ut augue. Etiam imperdiet tellus at dictum molestie. Duis ex dolor, cursus a quam at, vulputate consequat ante. Maecenas vel risus at ante ornare aliquam. Proin risus mi, pellentesque sit amet rhoncus eu, rutrum non ipsum. Praesent cursus fringilla eros, euismod tincidunt dolor rutrum sed. Phasellus tristique non tortor vitae varius. Nam in vestibulum est, ut volutpat urna. Mauris eu vehicula justo, pretium vulputate purus.</p>
-
-		</div>
-
-	{# Forms #}
-
-		<div class="container--layout triple-padding--top">
-
-			<h2 class="center margin--bottom">Forms</h2>
-
-			<hr>
-
-		</div>
-
-		<div class="container--copy double-padding--top">
-
-			<p class="margin--bottom">Our forms require...</p>
-
-			<div class="button-grid center padding--bottom">
-
-				<button
-					class="button--outline--plum"
-					type="button">
-					Submit
-				</button>
-
-				<button
-					class="button--solid--plum"
-					type="button">
-					Submit
-				</button>
-
-				<button
-					class="button--outline--wine"
-					type="button">
-					Option
-				</button>
-
-				<button
-					class="button--solid--wine"
-					type="button">
-					Option
-				</button>
-
-				<button
-					class="button--outline--crimson"
-					type="button">
-					Cancel
-				</button>
-
-				<button
-					class="button--solid--crimson"
-					type="button">
-					Cancel
-				</button>
-
-				<button
-					class="button--outline--sunrise"
-					type="button">
-					Click Here
-				</button>
-
-				<button
-					class="button--solid--sunrise"
-					type="button">
-					Click Here
-				</button>
-
-			</div>
-
-			<form>
-
-				{# Form Error #}
-
-					<div class="error">
-
-						<img src="/images/icons/exclamation-circle-crimson.svg" alt="Error Icon">
-
-						<span>Uh oh! These credentials don't seem to match our records.</span>
-
-					</div>
-
-				{# Form Alert #}
-
-					<div class="alert">
-
-						<img src="/images/icons/notification-plum.svg" alt="Error Icon">
-
-						<span>Heads up! We wanted to let you know that there is important information on this page.</span>
-
-					</div>
-
-				{# Form Elements #}
-
-					<div class="flex-grid gutter">
-
-						<div class="box b-full tl-1of2 input">
-
-							<label>My Name</label>
-
-							<span class="required-label">Required</span>
-
-							<div class="input-wrapper">
-
-								<input
-									placeholder="e.g. Clark Kent"
-									required
-									type="text"/>
-
-								<span class="error-copy">This input has an error or is formatted incorrectly.</span>
-
-							</div>
-
-						</div>
-
-						<div class="box b-full tl-1of2 input invalid">
-
-							<label>My Name</label>
-
-							<span class="required-label">Required</span>
-
-							<div class="input-wrapper">
-
-								<input
-									placeholder="e.g. Diana Prince"
-									required
-									type="text"/>
-
-								<span class="error-copy">This input has an error or is formatted incorrectly.</span>
-
-							</div>
-
-						</div>
-
-						<div class="box b-full input">
-
-							<label>My Story</label>
-
-							<span class="required-label">Required</span>
-
-							<div class="input-wrapper">
-
-								<textarea
-									placeholder="e.g. One day Bruce Wayne..."
-									required>I am Batman.</textarea>
-
-								<span class="error-copy">This input has an error or is formatted incorrectly.</span>
-
-							</div>
-
-						</div>
-
-						<div class="box b-full copy">
-
-							<p>This is an example of paragraph text inside of a form. This type of text can be used for instructional or contextual purposes.</p>
-
-						</div>
-
-						<div class="box b-full input">
-
-							<label>Select Your Partner</label>
-
-							<span class="required-label">Required</span>
-
-							<div class="input-wrapper">
-
-								<div
-									class="select">
-
-									<img src="/images/icons/chevron-down.svg" alt="Dropdown Chevron">
-
-									<select>
-
-										<option>Aquaman</option>
-										<option>Martian Manhunter</option>
-										<option>Booster Gold</option>
-										<option>The Flash</option>
-
-									</select>
-
-								</div>
-
-								<span class="error-copy">This input has an error or is formatted incorrectly.</span>
-
-							</div>
-
-						</div>
-
-						<div class="box b-full tl-1of2 input">
-
-							<label>Today's Date</label>
-
-							<span class="required-label">Required</span>
-
-							<div class="input-wrapper">
-
-								<input
-									type="date"/>
-
-								<span class="error-copy">This input has an error or is formatted incorrectly.</span>
-
-							</div>
-
-						</div>
-
-						<div class="box b-full tl-1of2 input">
-
-							<label>Your Password</label>
-
-							<span class="required-label">Required</span>
-
-							<div class="input-wrapper">
-
-								<div class="password">
-
-									<input
-										id=""
-										required
-										type="password"
-										value="G1assesAreTheBestDisguise"/>
-
-									<button type="button">
-										<img src="/images/icons/eye.svg" alt="Show/Hide Password">
-									</button>
-
-								</div>
-
-								<span class="error-copy">This input has an error or is formatted incorrectly.</span>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				{# Fieldset Example #}
-
-					<fieldset>
-
-						<div class="flex-grid gutter">
-
-							<legend class="box b-full">
-								Fieldset Information
-							</legend>
-
-							<div class="box b-full copy">
-
-								<p>This is an example of paragraph text inside of a form. This type of text can be used for instructional or contextual purposes.</p>
-
-							</div>
-
-                            {# Radio Selection #}
-
-    							<div class="box b-full input">
-
-    								<label>Select Your Level</label>
-
-    								<span class="required-label">Required</span>
-
-    								<div class="input-wrapper">
-
-    									<div 
-    										aria-orientation="horizontal"
-    										class="radio-group flex-grid"
-    										role="radiogroup">
-
-    										<label 
-    											class="box b-full tp-1of4"
-    											for="r1">
-
-    											<input
-    												id="r1"
-    												name="sample-radio-group"
-    												type="radio"
-    												checked />
-
-    											<span>Beginner</span>
-
-    										</label>
-
-    										<label 
-    											class="box b-full tp-1of4"
-    											for="r2">
-
-    											<input
-    												id="r2"
-    												name="sample-radio-group"
-    												type="radio" />
-
-    											<span>Intermediate</span>
-
-    										</label>
-
-    										<label 
-    											class="box b-full tp-1of4"
-    											for="r3">
-
-    											<input
-    												id="r3"
-    												name="sample-radio-group"
-    												type="radio" />
-
-    											<span>Advanced</span>
-
-    										</label>
-
-    										<label 
-    											class="box b-full tp-1of4"
-    											for="r4">
-
-    											<input
-    												id="r4"
-    												name="sample-radio-group"
-    												type="radio" />
-
-    											<span>Lead</span>
-
-    										</label>
-
-    									</div>
-
-    									<span class="error-copy">This input has an error or is formatted incorrectly.</span>
-
-    								</div>
-
-    							</div>
-
-							{# Checkbox List #}
-
-								<div class="box b-full input">
-
-                                    <label>I want the following superpowers:</label>
-
-                                    <span class="required-label">Required</span>
-
-                                    <div class="input-wrapper">
-
-                                        <div class="checkbox-group flex-grid gutter">
-
-                                            <label 
-                                                class="box b-1of2 tl-1of3 dl-1of4"
-                                                for="c1">
-
-                                                <input
-                                                    id="c1"
-                                                    type="checkbox" />
-
-                                                    <span>Flight</span>
-
-                                            </label>
-
-                                            <label 
-                                                class="box b-1of2 tl-1of3 dl-1of4"
-                                                for="c2">
-
-                                                <input
-                                                    id="c2"
-                                                    type="checkbox" />
-
-                                                    <span>Strength</span>
-
-                                            </label>
-
-                                            <label 
-                                                class="box b-1of2 tl-1of3 dl-1of4"
-                                                for="c3">
-
-                                                <input
-                                                    id="c3"
-                                                    type="checkbox" />
-
-                                                    <span>Laser Vision</span>
-
-                                            </label>
-
-                                            <label 
-                                                class="box b-1of2 tl-1of3 dl-1of4"
-                                                for="c4">
-
-                                                <input
-                                                    id="c4"
-                                                    type="checkbox" />
-
-                                                    <span>Invulnerability</span>
-
-                                            </label>
-
-                                            <label 
-                                                class="box b-1of2 tl-1of3 dl-1of4"
-                                                for="c5">
-
-                                                <input
-                                                    id="c5"
-                                                    type="checkbox" />
-
-                                                    <span>Telekinesis</span>
-
-                                            </label>
-
-                                        </div>
-
-                                        <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+                                    <div class="box b-1of4 bg-plum double-padding--top double-padding--bottom">
 
                                     </div>
 
-								</div>
+                                    <div class="box b-1of4 bg-wine double-padding--top double-padding--bottom">
 
-							{# Input (Number) #}
+                                    </div>
 
-								<div class="box b-full tl-1of3 input">
+                                    <div class="box b-1of4 bg-crimson double-padding--top double-padding--bottom">
 
-									<label># of Sidekicks</label>
+                                    </div>
 
-									<span class="required-label">Required</span>
+                                    <div class="box b-1of4 bg-sunrise double-padding--top double-padding--bottom">
 
-									<div class="input-wrapper">
+                                    </div>
 
-										<input
-											placeholder="0"
-											required
-											type="number"/>
+                                </div>
 
-										<span class="error-copy">This input has an error or is formatted incorrectly.</span>
+                                <p class="double-margin--bottom">Colour is an important part of Talent Cloud's identity as a people-first platform.</p>
 
-									</div>
+                                <h3 class="margin--bottom">Plum</h3>
 
-								</div>
+                                <p class="margin--bottom">Plum is used in the following cases:</p>
 
-							{# Input (URL) #}
+                                <div class="flex-grid rounded double-margin--bottom">
 
-								<div class="box b-full tl-2of3 input">
+                                    <div class="box b-1of3 bg-plum--dark double-padding--top double-padding--bottom">
 
-									<label>My Website</label>
+                                    </div>
 
-									<span class="required-label">Required</span>
+                                    <div class="box b-1of3 bg-plum double-padding--top double-padding--bottom">
 
-									<div class="input-wrapper">
+                                    </div>
 
-										<input
-											placeholder="e.g. http://talent.canada.ca"
-											required
-											type="url"/>
+                                    <div class="box b-1of3 bg-plum--light double-padding--top double-padding--bottom">
 
-										<span class="error-copy">This input has an error or is formatted incorrectly.</span>
+                                    </div>
 
-									</div>
+                                </div>
 
-								</div>
+                                <h3 class="margin--bottom">Wine</h3>
 
-						</div>
+                                <p class="margin--bottom">Wine is used in the following cases:</p>
 
-					</fieldset>
+                                <div class="flex-grid rounded double-margin--bottom">
 
-				{# Form Actions #}
+                                    <div class="box b-1of3 bg-wine--dark double-padding--top double-padding--bottom">
 
-					<div class="flex-grid gutter actions">
+                                    </div>
 
-						<div class="box b-full pl-1of2">
+                                    <div class="box b-1of3 bg-wine double-padding--top double-padding--bottom">
 
-							<button
-								class="button--outline--crimson"
-								type="button">
-								Cancel
-							</button>
+                                    </div>
 
-						</div>
+                                    <div class="box b-1of3 bg-wine--light double-padding--top double-padding--bottom">
 
-						<div class="box b-full pl-1of2">
+                                    </div>
 
-							<button
-								class="button--solid--plum"
-								type="button">
-								Submit
-							</button>
+                                </div>
 
-						</div>
+                                <h3 class="margin--bottom">Crimson</h3>
 
-					</div>
+                                <p class="margin--bottom">Crimson is used in the following cases:</p>
 
-			</form>
+                                <div class="flex-grid rounded double-margin--bottom">
 
-		</div>
+                                    <div class="box b-1of3 bg-crimson--dark double-padding--top double-padding--bottom">
 
-    {# Common Elements #}
+                                    </div>
 
-		<div class="container--layout triple-padding--top">
+                                    <div class="box b-1of3 bg-crimson double-padding--top double-padding--bottom">
 
-			<h2 class="center margin--bottom">Common Elements</h2>
+                                    </div>
 
-			<hr>
+                                    <div class="box b-1of3 bg-crimson--light double-padding--top double-padding--bottom">
 
-            <div class="flex-grid gutter double-padding--top">
+                                    </div>
 
-                <div class="box b-full tp-1of2 dm-1of3 card job-summary">
+                                </div>
 
-                    <div class="heading">
+                                <h3 class="margin--bottom">Sunrise</h3>
 
-                    </div>
+                                <p class="margin--bottom">Sunrise is used in the following cases:</p>
 
-                    <div class="application-date">
+                                <div class="flex-grid rounded double-margin--bottom">
 
-                    </div>
+                                    <div class="box b-1of3 bg-sunrise--dark double-padding--top double-padding--bottom">
 
-                    <div class="summary flex-grid gutter">
+                                    </div>
 
-                        <div class="box b-full pl-1of2">
+                                    <div class="box b-1of3 bg-sunrise double-padding--top double-padding--bottom">
 
-                            <span class="half-margin--bottom block crimson bold">
-                                Location
-                            </span>
+                                    </div>
 
-                            <span class="summary-copy">
-                                Ottawa, Ontario
-                            </span>
+                                    <div class="box b-1of3 bg-sunrise--light double-padding--top double-padding--bottom">
 
-                        </div>
+                                    </div>
 
-                        <div class="box b-full pl-1of2">
+                                </div>
 
-                            <span class="half-margin--bottom block crimson bold">
-                                Annual Salary
-                            </span>
+                                <h3 class="margin--bottom">Plum to Crimson</h3>
 
-                            <span>
-                                $67,000 - $90,000
-                            </span>
+                                <p class="margin--bottom">Plum to Crimson is used in the following cases:</p>
 
-                        </div>
+                                <div class="flex-grid rounded double-margin--bottom">
 
-                        <div class="box b-full">
+                                    <div class="box b-full bg-rise double-padding--top double-padding--bottom">
 
-                            <span class="half-margin--bottom block crimson bold">
-                                Impact
-                            </span>
+                                    </div>
 
-                            <span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius fringilla metus id rutrum. Fusce condimentum risus ut purus consequat tempor. Proin vestibulum in nunc vel iaculis. Vivamus accumsan volutpat ligula, et accumsan tellus porttitor id. Donec vitae leo pretium, interdum elit in, scelerisque nibh.
-                            </span>
+                                </div>
 
-                        </div>
+                            </div>
+
+                            <h3 class="margin--bottom">Slate, Grey, &amp; White</h3>
+
+                            <p class="margin--bottom">Slate and white are used as follows:</p>
+
+                            <div class="flex-grid rounded double-margin--bottom bg-white">
+
+                                <div class="box b-1of5 bg-slate double-padding--top double-padding--bottom">
+
+                                </div>
+
+                                <div class="box b-1of5 bg-gray--dark double-padding--top double-padding--bottom">
+
+                                </div>
+
+                                <div class="box b-1of5 bg-gray double-padding--top double-padding--bottom">
+
+                                </div>
+
+                                <div class="box b-1of5 bg-gray--light double-padding--top double-padding--bottom">
+
+                                </div>
+
+                                <div class="box b-1of5 double-padding--top double-padding--bottom">
+
+                                </div>
+
+                            </div>
+
+                        {# Typography #}
+
+                            <div class="triple-padding--top">
+
+                                <a class="sidebar-anchor" id="typography"></a>
+
+                                <h2 class="margin--bottom">Typography</h2>
+
+                                <hr>
+
+                            </div>
+
+                            <div class="double-padding--top">
+
+                                <h3 class="margin--bottom">Open Sans by Steve Matteson</h3>
+
+                                <h4 class="bold crimson margin--bottom">Apache License 2.0</h4>
+
+                                <p class="margin--bottom">Open Sans is a humanist sans serif typeface designed by Steve Matteson, Type Director of Ascender Corp. This version contains the complete 897 character set, which includes the standard ISO Latin 1, Latin CE, Greek and Cyrillic character sets. <a href="https://fonts.google.com/specimen/Open+Sans" target="_blank" title="Visit Open Sans on Google Fonts">Open Sans</a> was designed with an upright stress, open forms and a neutral, yet friendly appearance. It was optimized for print, web, and mobile interfaces, and has excellent legibility characteristics in its letterforms.</p>
+
+                                <p class="margin--bottom">Talent Cloud uses a Sass 1.333 type scale for its typography.</p>
+
+                                <pre class="double-margin--bottom">{% include "common/design-system/code-font-scale" %}</pre>
+
+                                <h1 class="margin--bottom">H1: Thin, <span class="bold">Bold</span>, <span class="crimson">Coloured</span></h1>
+
+                                <h2 class="margin--bottom">H2: Thin, <span class="bold">Bold</span>, <span class="crimson">Coloured</span></h2>
+
+                                <h3 class="margin--bottom">H3: Thin, <span class="bold">Bold</span>, <span class="crimson">Coloured</span></h3>
+
+                                <h4 class="margin--bottom">H4: Thin, <span class="bold">Bold</span>, <span class="crimson">Coloured</span></h4>
+
+                                <h5 class="double-margin--bottom">H5: Thin, <span class="bold">Bold</span>, <span class="crimson">Coloured</span></h5>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae felis at purus molestie luctus. Duis maximus magna ante, id pellentesque purus vestibulum vel. Aliquam erat volutpat. Aliquam mattis turpis a ligula blandit gravida. Fusce lobortis tempus augue quis venenatis. Proin sed lobortis purus. Donec vitae libero id lectus ultrices dignissim convallis ut augue. Etiam imperdiet tellus at dictum molestie. Duis ex dolor, cursus a quam at, vulputate consequat ante. Maecenas vel risus at ante ornare aliquam. Proin risus mi, pellentesque sit amet rhoncus eu, rutrum non ipsum. Praesent cursus fringilla eros, euismod tincidunt dolor rutrum sed. Phasellus tristique non tortor vitae varius. Nam in vestibulum est, ut volutpat urna. Mauris eu vehicula justo, pretium vulputate purus.</p>
+
+                                <div class="double-padding--top">
+
+                                    <div class="flex-grid gutter">
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-white center padding rounded">
+
+                                                <span>Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-white center padding rounded">
+
+                                                <span class="plum">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-white center padding rounded">
+
+                                                <span class="wine">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-white center padding rounded">
+
+                                                <span class="crimson">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="padding--top">
+
+                                    <div class="flex-grid gutter">
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-slate center padding rounded">
+
+                                                <span class="white">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-plum center padding rounded">
+
+                                                <span class="white">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-wine center padding rounded">
+
+                                                <span class="white">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-crimson center padding rounded">
+
+                                                <span class="white">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="padding--top">
+
+                                    <div class="flex-grid gutter">
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-plum center padding rounded">
+
+                                                <span class="white bold">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-wine center padding rounded">
+
+                                                <span class="white bold">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-crimson center padding rounded">
+
+                                                <span class="white bold">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="box b-1of4 dm-1of6">
+
+                                            <div class="bg-sunrise center padding rounded">
+
+                                                <span class="white bold">Aa</span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        {# Forms #}
+
+                            <div class="triple-padding--top">
+
+                                <a class="sidebar-anchor" id="forms"></a>
+
+                                <h2 class="margin--bottom">Forms</h2>
+
+                                <hr>
+
+                            </div>
+
+                            <div class="double-padding--top">
+
+                                <p class="margin--bottom">Our forms require...</p>
+
+                                <div class="button-grid center padding--bottom">
+
+                                    <button
+                                        class="button--outline--plum"
+                                        type="button">
+                                        Submit
+                                    </button>
+
+                                    <button
+                                        class="button--solid--plum"
+                                        type="button">
+                                        Submit
+                                    </button>
+
+                                    <button
+                                        class="button--outline--wine"
+                                        type="button">
+                                        Option
+                                    </button>
+
+                                    <button
+                                        class="button--solid--wine"
+                                        type="button">
+                                        Option
+                                    </button>
+
+                                    <button
+                                        class="button--outline--crimson"
+                                        type="button">
+                                        Cancel
+                                    </button>
+
+                                    <button
+                                        class="button--solid--crimson"
+                                        type="button">
+                                        Cancel
+                                    </button>
+
+                                    <button
+                                        class="button--outline--sunrise"
+                                        type="button">
+                                        Click Here
+                                    </button>
+
+                                    <button
+                                        class="button--solid--sunrise"
+                                        type="button">
+                                        Click Here
+                                    </button>
+
+                                </div>
+
+                                <form>
+
+                                    {# Form Error #}
+
+                                        <div class="error">
+
+                                            <img src="/images/icons/exclamation-circle-crimson.svg" alt="Error Icon">
+
+                                            <span>Uh oh! These credentials don't seem to match our records.</span>
+
+                                        </div>
+
+                                    {# Form Alert #}
+
+                                        <div class="alert">
+
+                                            <img src="/images/icons/notification-plum.svg" alt="Error Icon">
+
+                                            <span>Heads up! We wanted to let you know that there is important information on this page.</span>
+
+                                        </div>
+
+                                    {# Form Elements #}
+
+                                        <div class="flex-grid gutter">
+
+                                            <div class="box b-full tl-1of2 input">
+
+                                                <label>My Name</label>
+
+                                                <span class="required-label">Required</span>
+
+                                                <div class="input-wrapper">
+
+                                                    <input
+                                                        placeholder="e.g. Clark Kent"
+                                                        required
+                                                        type="text"/>
+
+                                                    <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="box b-full tl-1of2 input invalid">
+
+                                                <label>My Name</label>
+
+                                                <span class="required-label">Required</span>
+
+                                                <div class="input-wrapper">
+
+                                                    <input
+                                                        placeholder="e.g. Diana Prince"
+                                                        required
+                                                        type="text"/>
+
+                                                    <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="box b-full input">
+
+                                                <label>My Story</label>
+
+                                                <span class="required-label">Required</span>
+
+                                                <div class="input-wrapper">
+
+                                                    <textarea
+                                                        placeholder="e.g. One day Bruce Wayne..."
+                                                        required>I am Batman.</textarea>
+
+                                                    <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="box b-full copy">
+
+                                                <p>This is an example of paragraph text inside of a form. This type of text can be used for instructional or contextual purposes.</p>
+
+                                            </div>
+
+                                            <div class="box b-full input">
+
+                                                <label>My Preferred Partner</label>
+
+                                                <span class="required-label">Required</span>
+
+                                                <div class="input-wrapper">
+
+                                                    <div
+                                                        class="select">
+
+                                                        <img src="/images/icons/chevron-down.svg" alt="Dropdown Chevron">
+
+                                                        <select>
+
+                                                            <option>Aquaman</option>
+                                                            <option>Zatanna</option>
+                                                            <option>Martian Manhunter</option>
+                                                            <option>Booster Gold</option>
+                                                            <option>Hawkgirl</option>
+                                                            <option>The Flash</option>
+                                                            <option>Atom</option>
+                                                            <option>Green Lantern</option>
+
+                                                        </select>
+
+                                                    </div>
+
+                                                    <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="box b-full tl-1of2 input">
+
+                                                <label>Today's Date</label>
+
+                                                <span class="required-label">Required</span>
+
+                                                <div class="input-wrapper">
+
+                                                    <input
+                                                        type="date"/>
+
+                                                    <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="box b-full tl-1of2 input">
+
+                                                <label>My Password</label>
+
+                                                <span class="required-label">Required</span>
+
+                                                <div class="input-wrapper">
+
+                                                    <div class="password">
+
+                                                        <input
+                                                            id=""
+                                                            required
+                                                            type="password"
+                                                            value="G1assesAreTheBestDisguise"/>
+
+                                                        <button type="button">
+                                                            <img src="/images/icons/eye.svg" alt="Show/Hide Password">
+                                                        </button>
+
+                                                    </div>
+
+                                                    <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    {# Fieldset Example #}
+
+                                        <fieldset>
+
+                                            <div class="flex-grid gutter">
+
+                                                <legend class="box b-full">
+                                                    Fieldset Information
+                                                </legend>
+
+                                                <div class="box b-full copy">
+
+                                                    <p>This is an example of paragraph text inside of a form. This type of text can be used for instructional or contextual purposes.</p>
+
+                                                </div>
+
+                                                {# Radio Selection #}
+
+                                                    <div class="box b-full input">
+
+                                                        <label>My Level</label>
+
+                                                        <span class="required-label">Required</span>
+
+                                                        <div class="input-wrapper">
+
+                                                            <div 
+                                                                aria-orientation="horizontal"
+                                                                class="radio-group flex-grid"
+                                                                role="radiogroup">
+
+                                                                <label 
+                                                                    class="box b-full tp-1of4"
+                                                                    for="r1">
+
+                                                                    <input
+                                                                        id="r1"
+                                                                        name="sample-radio-group"
+                                                                        type="radio"
+                                                                        checked />
+
+                                                                    <span>Beginner</span>
+
+                                                                </label>
+
+                                                                <label 
+                                                                    class="box b-full tp-1of4"
+                                                                    for="r2">
+
+                                                                    <input
+                                                                        id="r2"
+                                                                        name="sample-radio-group"
+                                                                        type="radio" />
+
+                                                                    <span>Intermediate</span>
+
+                                                                </label>
+
+                                                                <label 
+                                                                    class="box b-full tp-1of4"
+                                                                    for="r3">
+
+                                                                    <input
+                                                                        id="r3"
+                                                                        name="sample-radio-group"
+                                                                        type="radio" />
+
+                                                                    <span>Advanced</span>
+
+                                                                </label>
+
+                                                                <label 
+                                                                    class="box b-full tp-1of4"
+                                                                    for="r4">
+
+                                                                    <input
+                                                                        id="r4"
+                                                                        name="sample-radio-group"
+                                                                        type="radio" />
+
+                                                                    <span>Lead</span>
+
+                                                                </label>
+
+                                                            </div>
+
+                                                            <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                {# Checkbox List #}
+
+                                                    <div class="box b-full input">
+
+                                                        <label>I want the following superpowers:</label>
+
+                                                        <span class="required-label">Required</span>
+
+                                                        <div class="input-wrapper">
+
+                                                            <div class="checkbox-group flex-grid gutter">
+
+                                                                <label 
+                                                                    class="box b-1of2 tl-1of3 dl-1of4"
+                                                                    for="c1">
+
+                                                                    <input
+                                                                        id="c1"
+                                                                        type="checkbox" />
+
+                                                                        <span>Flight</span>
+
+                                                                </label>
+
+                                                                <label 
+                                                                    class="box b-1of2 tl-1of3 dl-1of4"
+                                                                    for="c2">
+
+                                                                    <input
+                                                                        id="c2"
+                                                                        type="checkbox" />
+
+                                                                        <span>Strength</span>
+
+                                                                </label>
+
+                                                                <label 
+                                                                    class="box b-1of2 tl-1of3 dl-1of4"
+                                                                    for="c3">
+
+                                                                    <input
+                                                                        id="c3"
+                                                                        type="checkbox" />
+
+                                                                        <span>Laser Vision</span>
+
+                                                                </label>
+
+                                                                <label 
+                                                                    class="box b-1of2 tl-1of3 dl-1of4"
+                                                                    for="c4">
+
+                                                                    <input
+                                                                        id="c4"
+                                                                        type="checkbox" />
+
+                                                                        <span>Invulnerability</span>
+
+                                                                </label>
+
+                                                                <label 
+                                                                    class="box b-1of2 tl-1of3 dl-1of4"
+                                                                    for="c5">
+
+                                                                    <input
+                                                                        id="c5"
+                                                                        type="checkbox" />
+
+                                                                        <span>Telekinesis</span>
+
+                                                                </label>
+
+                                                            </div>
+
+                                                            <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                {# Input (Number) #}
+
+                                                    <div class="box b-full tl-1of3 input">
+
+                                                        <label># of Sidekicks</label>
+
+                                                        <span class="required-label">Required</span>
+
+                                                        <div class="input-wrapper">
+
+                                                            <input
+                                                                placeholder="0"
+                                                                required
+                                                                type="number"/>
+
+                                                            <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                {# Input (URL) #}
+
+                                                    <div class="box b-full tl-2of3 input">
+
+                                                        <label>My Website</label>
+
+                                                        <span class="required-label">Required</span>
+
+                                                        <div class="input-wrapper">
+
+                                                            <input
+                                                                placeholder="e.g. http://talent.canada.ca"
+                                                                required
+                                                                type="url"/>
+
+                                                            <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                                        </div>
+
+                                                    </div>
+
+                                            </div>
+
+                                        </fieldset>
+
+                                    {# Form Actions #}
+
+                                        <div class="flex-grid gutter actions">
+
+                                            <div class="box b-full pl-1of2">
+
+                                                <button
+                                                    class="button--outline--crimson"
+                                                    type="button">
+                                                    Cancel
+                                                </button>
+
+                                            </div>
+
+                                            <div class="box b-full pl-1of2">
+
+                                                <button
+                                                    class="button--solid--plum"
+                                                    type="button">
+                                                    Submit
+                                                </button>
+
+                                            </div>
+
+                                        </div>
+
+                                </form>
+
+                            </div>
+
+                        {# Components #}
+
+                            <div class="triple-padding--top">
+
+                                <a class="sidebar-anchor" id="components"></a>
+
+                                <h2 class="margin--bottom">Components</h2>
+
+                                <hr>
+
+                                <div class="double-padding--top">
+
+                                    <div class="flex-grid gutter">
+
+                                        {# Impact-based Job Summary #}
+
+                                            <div class="box b-full tp-1of2">
+
+                                                <a 
+                                                    class="card job-summary"
+                                                    href=""
+                                                    title="Visit this job.">
+
+                                                    <div class="bg-slate padding">
+
+                                                        <h4 class="white half-margin--bottom bold">Front-end Developer</h4>
+
+                                                        <span class="white">Treasury Board of Canada Secretariat</span>
+
+                                                    </div>
+
+                                                    <div class="bg-wine padding">
+
+                                                        <span class="white bold">Apply by: July 5th 2019, 9PM EST</span>
+
+                                                    </div>
+
+                                                    <div class="content padding">
+
+                                                        <div class="flex-grid gutter">
+
+                                                            <div class="box b-full pl-1of2">
+
+                                                                <span class="half-margin--bottom block crimson bold">
+                                                                    Location
+                                                                </span>
+
+                                                                <span class="summary-copy">
+                                                                    Ottawa, Ontario
+                                                                </span>
+
+                                                            </div>
+
+                                                            <div class="box b-full pl-1of2">
+
+                                                                <span class="half-margin--bottom block crimson bold">
+                                                                    Annual Salary
+                                                                </span>
+
+                                                                <span>
+                                                                    $67,000 - $90,000
+                                                                </span>
+
+                                                            </div>
+
+                                                            <div class="box b-full">
+
+                                                                <span class="half-margin--bottom block crimson bold">
+                                                                    Impact
+                                                                </span>
+
+                                                                <p>
+                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius fringilla metus id rutrum. Fusce condimentum risus ut purus consequat tempor. Proin vestibulum in nunc vel iaculis.
+                                                                </p>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="view-link bg-slate padding">
+
+                                                        <span class="white bold">View Job</span>
+
+                                                    </div>
+
+                                                </a>
+
+                                            </div>
+
+                                        {# Taxonomy-based Job Summary #}
+
+                                            <div class="box b-full tp-1of2">
+
+                                                <a 
+                                                    class="card job-summary"
+                                                    href=""
+                                                    title="Visit this job.">
+
+                                                    <div class="bg-slate padding">
+
+                                                        <h4 class="white half-margin--bottom bold">Digital User Experience Designer</h4>
+
+                                                        <span class="white">Natural Resources Canada</span>
+
+                                                    </div>
+
+                                                    <div class="bg-wine padding">
+
+                                                        <span class="white bold">Apply by: December 25th 2019, 2PM EST</span>
+
+                                                    </div>
+
+                                                    <div class="content padding">
+
+                                                        <div class="flex-grid gutter">
+
+                                                            <div class="box b-full pl-1of2">
+
+                                                                <span class="half-margin--bottom block crimson bold">
+                                                                    Location
+                                                                </span>
+
+                                                                <span class="summary-copy">
+                                                                    Ottawa, Ontario
+                                                                </span>
+
+                                                            </div>
+
+                                                            <div class="box b-full pl-1of2">
+
+                                                                <span class="half-margin--bottom block crimson bold">
+                                                                    Annual Salary
+                                                                </span>
+
+                                                                <span>
+                                                                    $67,000 - $90,000
+                                                                </span>
+
+                                                            </div>
+
+                                                            <div class="box b-full pl-1of2">
+
+                                                                <span class="half-margin--bottom block crimson bold">
+                                                                    Duration
+                                                                </span>
+
+                                                                <span class="summary-copy">
+                                                                    14 Months
+                                                                </span>
+
+                                                            </div>
+
+                                                            <div class="box b-full pl-1of2">
+
+                                                                <span class="half-margin--bottom block crimson bold">
+                                                                    Remote Work
+                                                                </span>
+
+                                                                <span>
+                                                                    Allowed
+                                                                </span>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="view-link bg-slate padding">
+
+                                                        <span class="white bold">View Job</span>
+
+                                                    </div>
+
+                                                </a>
+
+                                            </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
 
                     </div>
 
@@ -849,6 +1115,8 @@
 
             </div>
 
-		</div>
+        </div>
+
+    </div>
 
 {% endblock %}

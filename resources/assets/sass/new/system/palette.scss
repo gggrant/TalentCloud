@@ -14,8 +14,9 @@
 	$sunrise: #F96548;
 	$white: #FFFFFF;
 
-	$gray-light: #B4B4B4;
-	$gray-dark: #6A6A6A;
+	$gray-light: #c7c7c7;
+	$gray: #8e8e8e;
+	$gray-dark: #565656;
 
 	.bg-slate {
 		background: $slate;
@@ -59,7 +60,7 @@
 
 	.bg-white {
 		background: $white;
-		border: 2px solid $gray-light;
+		border: 1px solid $gray-light;
 	}
 
 	.bg-gray--light {
@@ -68,6 +69,10 @@
 
 	.bg-gray--dark {
 		background: $gray-dark;
+	}
+
+	.bg-contrast {
+		background: #EAEAEA;
 	}
 
 // Gradients ===================================================================
