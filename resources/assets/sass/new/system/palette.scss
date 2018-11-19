@@ -7,19 +7,30 @@
 
 // Colours =====================================================================
 	
-	$slate: #1E1E1E;
 	$plum: #5B1647;
+	$plum-light: lighten($plum, 10%);
+	$plum-dark: darken($plum, 10%);
+
 	$wine: #96043E;
+	$wine-light: lighten($wine, 10%);
+	$wine-dark: darken($wine, 10%);
+
 	$crimson: #C90035;
+	$crimson-light: lighten($crimson, 10%);
+	$crimson-dark: darken($crimson, 10%);
+
 	$sunrise: #F96548;
+	$sunrise-light: lighten($sunrise, 10%);
+	$sunrise-dark: darken($sunrise, 10%);
+
 	$white: #FFFFFF;
-
-	$gray-light: #c7c7c7;
+	$gray-light: #e8e8e8;
 	$gray: #8e8e8e;
-	$gray-dark: #565656;
+	$gray-dark: #4b4b4b;
+	$slate: #1E1E23;
 
-	.bg-slate {
-		background: $slate;
+	.bg-plum--light {
+		background: $plum-light;
 	}
 
 	.bg-plum {
@@ -31,6 +42,14 @@
 
 	}
 
+	.bg-plum--dark {
+		background: $plum-dark;
+	}
+
+	.bg-wine--light {
+		background: $wine-light;
+	}
+
 	.bg-wine {
 		background: $wine;
 
@@ -38,6 +57,14 @@
 			font-weight: 600;
 		}
 
+	}
+
+	.bg-wine--dark {
+		background: $wine-dark;
+	}
+
+	.bg-crimson--light {
+		background: $crimson-light;
 	}
 
 	.bg-crimson {
@@ -49,6 +76,14 @@
 
 	}
 
+	.bg-crimson--dark {
+		background: $crimson-dark;
+	}
+
+	.bg-sunrise--light {
+		background: $sunrise-light;
+	}
+
 	.bg-sunrise {
 		background: $sunrise;
 
@@ -58,21 +93,32 @@
 
 	}
 
+	.bg-sunrise--dark {
+		background: $sunrise-dark;
+	}
+
+	.bg-slate {
+		background: $slate;
+	}
+
 	.bg-white {
 		background: $white;
-		border: 1px solid $gray-light;
+		border: 1px solid $gray;
 	}
 
 	.bg-gray--light {
-		background: $gray-light;
+		// background: $gray-light;
+		background: lighten($slate, 80%);
+	}
+
+	.bg-gray {
+		// background: $gray;
+		background: lighten($slate, 50%);
 	}
 
 	.bg-gray--dark {
-		background: $gray-dark;
-	}
-
-	.bg-contrast {
-		background: #EAEAEA;
+		// background: $gray-dark;
+		background: lighten($slate, 20%);
 	}
 
 // Gradients ===================================================================

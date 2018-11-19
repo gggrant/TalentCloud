@@ -51,14 +51,29 @@
 
     h1 {
         font-size: $font-scale--h1;
+
+        img {
+            width: $font-scale--h2;
+        }
+
     }
 
     h2 {
         font-size: $font-scale--h2;
+
+        img {
+            width: $font-scale--h3;
+        }
+
     }
 
     h3 {
         font-size: $font-scale--h3;
+
+        img {
+            width: $font-scale--h4;
+        }
+
     }
 
     h4 {
@@ -200,11 +215,75 @@
     }
     
     hr {
-        background: $gray-light;
+        background: $gray;
         border: none;
         height: 1px;
         width: 100%;
     }
+
+// Alerts ======================================================================
+
+    // Errors & Alerts
+
+        .error,
+        .alert {
+            border-radius: 5px;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            position: relative;
+
+            @media #{$tablet-portrait} {
+                padding: 1.5rem 1.5rem 1.5rem 6rem;
+            }
+
+            span {
+                font-weight: 600;
+                line-height: 1.5;
+            }
+
+            img {
+                display: none;
+                position: absolute;
+                top: 50%;
+                left: 3rem;
+                transform: translate(-50%, -50%);
+                width: 1.5rem;
+
+                @media #{$tablet-portrait} {
+                    display: block;
+                }
+
+            }
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+        }
+
+        .error {
+            background: transparentize($crimson, .8);
+            border: 1px solid $crimson;
+
+            span {
+                color: $crimson;
+            }
+
+        }
+
+        .alert {
+            background: transparentize($plum, .8);
+            border: 1px solid $plum;
+
+            span {
+                color: $plum;
+            }
+
+        }
 
 // Forms =======================================================================
 
@@ -214,68 +293,6 @@
         @media #{$tablet-portrait} {
             padding: 1rem 0;
         }
-
-        // Errors & Alerts
-
-            .error,
-            .alert {
-                border-radius: 5px;
-                margin: 2rem 0;
-                padding: 1.5rem;
-                position: relative;
-
-                @media #{$tablet-portrait} {
-                    padding: 1.5rem 1.5rem 1.5rem 6rem;
-                }
-
-                span {
-                    font-weight: 600;
-                    line-height: 1.5;
-                }
-
-                img {
-                    display: none;
-                    position: absolute;
-                    top: 50%;
-                    left: 3rem;
-                    transform: translate(-50%, -50%);
-                    width: 1.5rem;
-
-                    @media #{$tablet-portrait} {
-                        display: block;
-                    }
-
-                }
-
-                &:first-child {
-                    margin-top: 0;
-                }
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-
-            }
-
-            .error {
-                background: transparentize($crimson, .8);
-                border: 1px solid $crimson;
-
-                span {
-                    color: $crimson;
-                }
-
-            }
-
-            .alert {
-                background: transparentize($plum, .8);
-                border: 1px solid $plum;
-
-                span {
-                    color: $plum;
-                }
-
-            }
 
         // Fieldsets
 
@@ -336,7 +353,7 @@
                     position: relative;
 
                     input {
-                        border: 1px solid $gray-light;
+                        border: 1px solid $gray;
                         border-radius: 5px;
                         display: block;
                         outline: none;
@@ -355,7 +372,7 @@
                     }
 
                     textarea {
-                        border: 1px solid $gray-light;
+                        border: 1px solid $gray;
                         border-radius: 5px;
                         display: block;
                         outline: none;
@@ -385,7 +402,7 @@
 
                         select {
                             appearance: none;
-                            border: 1px solid $gray-light;
+                            border: 1px solid $gray;
                             border-radius: 5px;
                             display: block;
                             outline: none;
@@ -470,9 +487,9 @@
                             span {
                                 align-items: center;
                                 border-top: none;
-                                border-right: 1px solid $gray-light;
-                                border-bottom: 1px solid $gray-light;
-                                border-left: 1px solid $gray-light;
+                                border-right: 1px solid $gray;
+                                border-bottom: 1px solid $gray;
+                                border-left: 1px solid $gray;
                                 display: flex;
                                 font-size: $font-scale--regular;
                                 height: 100%;
@@ -483,9 +500,9 @@
                                 word-wrap: break-word;
 
                                 @media #{$tablet-portrait} {
-                                    border-top: 1px solid $gray-light;
-                                    border-right: 1px solid $gray-light;
-                                    border-bottom: 1px solid $gray-light;
+                                    border-top: 1px solid $gray;
+                                    border-right: 1px solid $gray;
+                                    border-bottom: 1px solid $gray;
                                     border-left: none;
                                 }
 
@@ -498,11 +515,11 @@
                             &:first-of-type {
 
                                 span {
-                                    border-top: 1px solid $gray-light;
+                                    border-top: 1px solid $gray;
                                     border-radius: 5px 5px 0 0;
 
                                     @media #{$tablet-portrait} {
-                                        border-left: 1px solid $gray-light;
+                                        border-left: 1px solid $gray;
                                         border-radius: 5px 0 0 5px;
                                     }
                                     
