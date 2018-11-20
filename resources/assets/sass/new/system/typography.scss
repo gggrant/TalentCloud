@@ -49,7 +49,8 @@
 
 // Headings ====================================================================
 
-    h1 {
+    h1,
+    .heading--01 {
         font-size: $font-scale--h1;
 
         img {
@@ -58,7 +59,8 @@
 
     }
 
-    h2 {
+    h2,
+    .heading--01 {
         font-size: $font-scale--h2;
 
         img {
@@ -67,7 +69,8 @@
 
     }
 
-    h3 {
+    h3,
+    .heading--03 {
         font-size: $font-scale--h3;
 
         img {
@@ -76,12 +79,18 @@
 
     }
 
-    h4 {
+    h4,
+    .heading--04 {
         font-size: $font-scale--h4;
     }
 
-    h5 {
+    h5,
+    .heading--05 {
         font-size: $font-scale--h5;
+    }
+
+    [class*="heading--"] {
+        display: block;
     }
 
     h1, h2, h3, h4, h5 {
@@ -337,6 +346,7 @@
 
                 .required-label {
                     color: $crimson;
+                    display: none;
                     font-size: $font-scale--small;
                     position: absolute;
                     top: .5rem;
@@ -555,6 +565,14 @@
 
                 }
 
+                &.required {
+
+                    .required-label {
+                        display: block;
+                    }
+
+                }
+
                 &.invalid {
 
                     input,
@@ -613,6 +631,7 @@
         border-radius: 5px;
         cursor: pointer;
         padding: calc(1rem + 3.5px) 1.5rem;
+        text-decoration: underline;
 
         &[class*="solid--"] {
             border: 1px solid rgba(255, 255, 255, 0);
@@ -645,21 +664,25 @@
             &[class*="plum"] {
                 border: 1px solid $plum;
                 color: $plum;
+                font-weight: 600;
             }
 
             &[class*="wine"] {
                 border: 1px solid $wine;
                 color: $wine;
+                font-weight: 600;
             }
 
             &[class*="crimson"] {
                 border: 1px solid $crimson;
                 color: $crimson;
+                font-weight: 600;
             }
 
             &[class*="sunrise"] {
                 border: 1px solid $sunrise;
                 color: $sunrise;
+                font-weight: 600;
             }
 
         }

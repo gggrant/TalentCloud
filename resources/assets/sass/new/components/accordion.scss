@@ -1,0 +1,90 @@
+// =============================================================================
+
+    // Talent Cloud
+    // Accordions
+
+// =============================================================================
+
+.accordion {
+	// border: 1px solid $gray;
+	border-bottom: 1px solid $gray;
+
+	// &+.accordion {
+	// 	margin-top: 2rem;
+	// }
+
+	.accordion-trigger {
+		cursor: pointer;
+		position: relative;
+
+		[class*="accordion-icon--"] {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translate(0, -50%);
+			width: 1.5rem;
+
+			&[class*="add"] {
+				display: block;
+			}
+
+			&[class*="remove"] {
+				display: none;
+			}
+
+		}
+
+	}
+
+	.accordion-content {
+		// border-top: 1px solid $gray;
+		display: none;
+
+		.accordion-actions {
+
+			.box {
+				text-align: center;
+
+				@media #{$tablet-portrait} {
+					text-align: left;
+				}
+
+				&:last-child {
+
+					@media #{$tablet-portrait} {
+						text-align: right;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&.active {
+		
+		.accordion-trigger {
+
+			[class*="accordion-icon--"] {
+
+				&[class*="add"] {
+					display: none;
+				}
+
+				&[class*="remove"] {
+					display: block;
+				}
+
+			}
+
+		}
+
+		.accordion-content {
+			display: block;
+		}
+
+	}
+
+}

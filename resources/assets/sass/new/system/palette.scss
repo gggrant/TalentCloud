@@ -19,7 +19,8 @@
 	$crimson-light: lighten($crimson, 10%);
 	$crimson-dark: darken($crimson, 10%);
 
-	$sunrise: #F96548;
+	// $sunrise: #F96548;
+	$sunrise: #F46F6F;
 	$sunrise-light: lighten($sunrise, 10%);
 	$sunrise-dark: darken($sunrise, 10%);
 
@@ -133,6 +134,23 @@
 
 	.bg-rise {
 		@extend %rise;
+
+		* {
+			font-weight: 600;
+		}
+		
+	}
+
+	%rise-reverse {
+		background: $crimson;
+		background: -moz-linear-gradient(-45deg, $crimson 0%, $plum 100%);
+		background: -webkit-linear-gradient(-45deg, $crimson 0%,$plum 100%);
+		background: linear-gradient(135deg, $crimson 0%,$plum 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$crimson', endColorstr='$plum',GradientType=1 );
+	}
+
+	.bg-rise-reverse {
+		@extend %rise-reverse;
 
 		* {
 			font-weight: 600;

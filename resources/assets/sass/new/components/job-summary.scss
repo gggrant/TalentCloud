@@ -14,8 +14,12 @@
 	transition: transform .2s ease;
 
 	&:hover {
-		transform: scale(1.05);
+		transform: scale(1.025);
 		transition: transform .2s ease;
+	}
+
+	h4 {
+		text-decoration: underline;
 	}
 
 	.content {
@@ -23,11 +27,7 @@
 	}
 
 	.view-link {
-		text-align: center;
-
-		@media #{$tablet-portrait} {
-			text-align: right;
-		}
+		text-align: right;
 
 		span {
 			text-decoration: underline;

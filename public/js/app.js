@@ -10661,7 +10661,7 @@ module.exports = __webpack_require__(9);
 
                                         function requiredFields() {
                                                             $("input:required, textarea:required").each(function (e) {
-                                                                                $(this).parent().addClass("required");
+                                                                                $(this).parent().parent().addClass("required");
                                                                                 // $(this).parent().find("label").append("<span class='form__required'><i class='fa fa-asterisk' aria-label='Asterisk'></i></span>");
                                                             });
                                         }
