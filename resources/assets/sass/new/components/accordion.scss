@@ -6,23 +6,19 @@
 // =============================================================================
 
 .accordion {
-	// border: 1px solid $gray;
+	background: $gray-light;
 	border-bottom: 1px solid $gray;
-
-	// &+.accordion {
-	// 	margin-top: 2rem;
-	// }
 
 	.accordion-trigger {
 		cursor: pointer;
 		position: relative;
 
 		[class*="accordion-icon--"] {
+			font-size: $font-scale--h4;
 			position: absolute;
 			top: 50%;
-			right: 0;
+			right: 1.5rem;
 			transform: translate(0, -50%);
-			width: 1.5rem;
 
 			&[class*="add"] {
 				display: block;
@@ -37,30 +33,16 @@
 	}
 
 	.accordion-content {
-		// border-top: 1px solid $gray;
 		display: none;
 
-		.accordion-actions {
+        form {
+            padding-bottom: 0;
+        }
 
-			.box {
-				text-align: center;
+	}
 
-				@media #{$tablet-portrait} {
-					text-align: left;
-				}
-
-				&:last-child {
-
-					@media #{$tablet-portrait} {
-						text-align: right;
-					}
-
-				}
-
-			}
-
-		}
-
+	&:first-of-type {
+		border-top: 1px solid $gray;
 	}
 
 	&.active {

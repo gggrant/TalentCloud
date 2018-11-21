@@ -98,15 +98,15 @@
 
                                 <h3 class="double-margin--top margin--bottom">Our Design Philosophy</h3>
 
-                                <p>Things</p>
+                                <p>WIP</p>
 
                                 <h3 class="double-margin--top margin--bottom">Iterative Design</h3>
 
-                                <p>Things</p>
+                                <p>WIP</p>
 
                                 <h3 class="double-margin--top margin--bottom">Open by Default</h3>
 
-                                <p>Things</p>
+                                <p>WIP</p>
 
                             </div>
 
@@ -1021,58 +1021,17 @@
 
                                     <p class="margin--bottom">Accordions act as a means of containing information, forms, and components that are associated with each other while concealing said information when it is not important.</p>
 
-                                    <div class="accordion active">
+                                    {# Accordion (Example) #}
 
-                                        <div
-                                            aria-expanded="true"
-                                            class="accordion-trigger"
-                                            tabindex="0">
+                                        <div>
 
-                                            <div class="padding--top double-padding--right padding--bottom">
+                                            {% include "common/components/accordion" %}
 
-                                                <span class="heading--04 bold">Accordion Label</span>
+                                            {% include "common/components/accordion" %}
 
-                                                <span class="heading--05 wine half-margin--top">Accordion Subtitle</span>
-
-                                            </div>
-
-                                            <img class="accordion-icon--add" src="/images/icons/add-circle-slate.svg" title="Expand the accordion.">
-
-                                            <img class="accordion-icon--remove" src="/images/icons/remove-circle-slate.svg" title="Collapse the accordion.">
+                                            {% include "common/components/accordion" %}
 
                                         </div>
-
-                                        <div
-                                            aria-hidden="false"
-                                            class="accordion-content">
-
-                                            <div class="padding--bottom">
-
-                                                {# Content Goes Here #}
-
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices. A condimentum vitae sapien pellentesque habitant morbi tristique senectus et.</p>
-
-                                            </div>
-
-                                            <div class="accordion-actions flex-grid gutter padding--bottom">
-
-                                                <div class="box tp-1of2">
-                                                    <button class="button--outline--crimson">
-                                                        Delete
-                                                    </button>
-                                                </div>
-
-                                                <div class="box tp-1of2">
-                                                    <button class="button--solid--plum">
-                                                        Save
-                                                    </button>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
 
                                 {# Job Summaries #}
 
@@ -1263,6 +1222,20 @@
                                                 </div>
 
                                         </div>
+
+                                    </div>
+
+                                {# Skills #}
+
+                                    <h3 class="double-margin--top margin--bottom">Skill Objects</h3>
+
+                                    <p class="margin--bottom">Skill objects are used to create, edit, and view a user's skill claim. These modified objects act like accordions but display the information in a more cohesive way.</p>
+
+                                    {# Skill (Example) #}
+
+                                    <div>
+
+                                        {# {% include "common/components/skill" %} #}
 
                                     </div>
 

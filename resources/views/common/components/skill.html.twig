@@ -1,0 +1,359 @@
+{# Skill Accordion (Example) #}
+
+<div>
+
+    <div class="accordion invalid">
+
+        <div
+            aria-expanded="true"
+            class="accordion-trigger padding--right"
+            tabindex="0">
+
+            <i class="accordion-status--complete plum material-icons">
+                check_circle
+            </i>
+
+            <i class="accordion-status--invalid crimson material-icons">
+                error
+            </i>
+
+            <div class="box b-3of4 tp-4of5 ds-7of8 padding--top double-padding--right padding--bottom padding--left">
+
+                <span class="heading--04 bold">Sample Skill</span>
+
+                <span class="heading--05 wine half-margin--top">Claimed at Advanced</span>
+
+            </div>
+
+            <i class="accordion-icon--add slate material-icons">
+                add_circle
+            </i>
+
+            <i class="accordion-icon--remove slate material-icons">
+                remove_circle
+            </i>
+
+        </div>
+
+        <div
+            aria-hidden="false"
+            class="accordion-content padding--right padding--left">
+
+            <div class="padding--bottom">
+
+                {# Content Goes Here #}
+
+                <form>
+
+                    {# Form Elements #}
+
+                        <div class="flex-grid gutter">
+
+                            {# Radio Selection #}
+
+                                <div class="box b-full input">
+
+                                    <label>My Level</label>
+
+                                    <span class="required-label">Required</span>
+
+                                    <div class="input-wrapper">
+
+                                        <div 
+                                            aria-orientation="horizontal"
+                                            class="radio-group flex-grid"
+                                            role="radiogroup">
+
+                                            <label 
+                                                class="box b-full tp-1of4"
+                                                for="s1">
+
+                                                <input
+                                                    id="s1"
+                                                    name="skill-radio-group"
+                                                    type="radio" />
+
+                                                <span>Beginner</span>
+
+                                            </label>
+
+                                            <label 
+                                                class="box b-full tp-1of4"
+                                                for="s2">
+
+                                                <input
+                                                    id="s2"
+                                                    name="skill-radio-group"
+                                                    type="radio" />
+
+                                                <span>Intermediate</span>
+
+                                            </label>
+
+                                            <label 
+                                                class="box b-full tp-1of4"
+                                                for="s3">
+
+                                                <input
+                                                    id="s3"
+                                                    name="skill-radio-group"
+                                                    type="radio"
+                                                    checked />
+
+                                                <span>Advanced</span>
+
+                                            </label>
+
+                                            <label 
+                                                class="box b-full tp-1of4"
+                                                for="s4">
+
+                                                <input
+                                                    id="s4"
+                                                    name="skill-radio-group"
+                                                    type="radio" />
+
+                                                <span>Lead</span>
+
+                                            </label>
+
+                                        </div>
+
+                                        <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                    </div>
+
+                                </div>
+
+                            {# Textarea #}
+
+                                <div class="box b-full input invalid">
+
+                                    <label>How I Acquired this Knowledge</label>
+
+                                    <span class="required-label">Required</span>
+
+                                    <div class="input-wrapper">
+
+                                        <textarea
+                                            placeholder="e.g. One day Bruce Wayne..."
+                                            required></textarea>
+
+                                        <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                    </div>
+
+                                </div>
+
+                        </div>
+
+                        <div class="flex-grid gutter actions">
+
+                            <div class="box b-full pl-1of2">
+
+                                <button
+                                    class="button--outline--crimson"
+                                    type="button">
+                                    Delete Skill
+                                </button>
+
+                            </div>
+
+                            <div class="box b-full pl-1of2">
+
+                                <button
+                                    class="button--solid--plum"
+                                    type="button">
+                                    Save Skill
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="accordion complete">
+
+        <div
+            aria-expanded="true"
+            class="accordion-trigger padding--right"
+            tabindex="0">
+
+            <i class="accordion-status--complete plum material-icons">
+                check_circle
+            </i>
+
+            <i class="accordion-status--invalid crimson material-icons">
+                error
+            </i>
+
+            <div class="box b-3of4 tp-4of5 ds-7of8 padding--top double-padding--right padding--bottom padding--left">
+
+                <span class="heading--04 bold">Sample Skill</span>
+
+                <span class="heading--05 wine half-margin--top">Claimed at Intermediate</span>
+
+            </div>
+
+            <i class="accordion-icon--add slate material-icons">
+                add_circle
+            </i>
+
+            <i class="accordion-icon--remove slate material-icons">
+                remove_circle
+            </i>
+
+        </div>
+
+        <div
+            aria-hidden="false"
+            class="accordion-content padding--right padding--left">
+
+            <div class="padding--bottom">
+
+                {# Content Goes Here #}
+
+                <form>
+
+                    {# Form Elements #}
+
+                        <div class="flex-grid gutter">
+
+                            {# Radio Selection #}
+
+                                <div class="box b-full input">
+
+                                    <label>My Level</label>
+
+                                    <span class="required-label">Required</span>
+
+                                    <div class="input-wrapper">
+
+                                        <div 
+                                            aria-orientation="horizontal"
+                                            class="radio-group flex-grid"
+                                            role="radiogroup">
+
+                                            <label 
+                                                class="box b-full tp-1of4"
+                                                for="s1">
+
+                                                <input
+                                                    id="s1"
+                                                    name="skill-radio-group"
+                                                    type="radio" />
+
+                                                <span>Beginner</span>
+
+                                            </label>
+
+                                            <label 
+                                                class="box b-full tp-1of4"
+                                                for="s2">
+
+                                                <input
+                                                    id="s2"
+                                                    name="skill-radio-group"
+                                                    type="radio"
+                                                    checked />
+
+                                                <span>Intermediate</span>
+
+                                            </label>
+
+                                            <label 
+                                                class="box b-full tp-1of4"
+                                                for="s3">
+
+                                                <input
+                                                    id="s3"
+                                                    name="skill-radio-group"
+                                                    type="radio"/>
+
+                                                <span>Advanced</span>
+
+                                            </label>
+
+                                            <label 
+                                                class="box b-full tp-1of4"
+                                                for="s4">
+
+                                                <input
+                                                    id="s4"
+                                                    name="skill-radio-group"
+                                                    type="radio" />
+
+                                                <span>Lead</span>
+
+                                            </label>
+
+                                        </div>
+
+                                        <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                    </div>
+
+                                </div>
+
+                            {# Textarea #}
+
+                                <div class="box b-full input">
+
+                                    <label>How I Acquired this Knowledge</label>
+
+                                    <span class="required-label">Required</span>
+
+                                    <div class="input-wrapper">
+
+                                        <textarea
+                                            placeholder="e.g. One day Bruce Wayne..."
+                                            required>I am Batman.</textarea>
+
+                                        <span class="error-copy">This input has an error or is formatted incorrectly.</span>
+
+                                    </div>
+
+                                </div>
+
+                        </div>
+
+                        <div class="flex-grid gutter actions">
+
+                            <div class="box b-full pl-1of2">
+
+                                <button
+                                    class="button--outline--crimson"
+                                    type="button">
+                                    Delete Skill
+                                </button>
+
+                            </div>
+
+                            <div class="box b-full pl-1of2">
+
+                                <button
+                                    class="button--solid--plum"
+                                    type="button">
+                                    Save Skill
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -32,7 +32,12 @@
 
     html,
     body {
-        font-size: 120%;
+        font-size: 110%;
+
+        @media #{$tablet-portrait} {
+            font-size: 120%;
+        }
+
     }
 
     // $font-scale: 1.414;
@@ -222,6 +227,30 @@
         }
 
     }
+
+    i {
+
+        &.plum {
+            color: $plum;
+        }
+
+        &.wine {
+            color: $wine;
+        }
+
+        &.crimson {
+            color: $crimson;
+        }
+
+        &.white {
+            color: $white;
+        }
+
+        &.bold {
+            font-weight: 800;
+        }
+
+    }
     
     hr {
         background: $gray;
@@ -297,11 +326,6 @@
 // Forms =======================================================================
 
     form {
-        padding: .5rem 0;
-
-        @media #{$tablet-portrait} {
-            padding: 1rem 0;
-        }
 
         // Fieldsets
 
@@ -496,6 +520,7 @@
 
                             span {
                                 align-items: center;
+                                background: $white;
                                 border-top: none;
                                 border-right: 1px solid $gray;
                                 border-bottom: 1px solid $gray;

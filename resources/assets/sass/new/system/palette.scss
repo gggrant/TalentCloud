@@ -25,10 +25,10 @@
 	$sunrise-dark: darken($sunrise, 10%);
 
 	$white: #FFFFFF;
-	$gray-light: #e8e8e8;
-	$gray: #8e8e8e;
-	$gray-dark: #4b4b4b;
 	$slate: #1E1E23;
+	$gray-light: lighten($slate, 80%);;
+	$gray: lighten($slate, 50%);
+	$gray-dark: lighten($slate, 20%);
 
 	.bg-plum--light {
 		background: $plum-light;
@@ -108,18 +108,15 @@
 	}
 
 	.bg-gray--light {
-		// background: $gray-light;
-		background: lighten($slate, 80%);
+		background: $gray-light;
 	}
 
 	.bg-gray {
-		// background: $gray;
-		background: lighten($slate, 50%);
+		background: $gray;
 	}
 
 	.bg-gray--dark {
-		// background: $gray-dark;
-		background: lighten($slate, 20%);
+		background: $gray-dark;
 	}
 
 // Gradients ===================================================================
