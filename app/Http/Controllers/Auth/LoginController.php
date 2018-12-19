@@ -89,7 +89,7 @@ class LoginController extends AuthController
         return redirect($this->redirectPath());
     }
     
-    protected function credentials()
+    public function credentials()
     {
     $username = $this->username();
     $credentials = request()->only($username, 'password');

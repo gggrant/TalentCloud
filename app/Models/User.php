@@ -138,14 +138,15 @@ class User extends BaseModel implements
         $this->notify(new ResetPasswordNotification($token));
     }
     
-    public function makeEmailsCaseInsensitive($value)
-{
+    public function makeEmailsCaseInsensitive($value) // Mutator function will convert all emails into lowercase whenever a user registers an account on TalentCloud.
+    {
     $this->attributes['email'] = strtolower($value);
-}
-    
-    public function CheckEmailCaseConversionPassed($value) 
-    {    
-        return strtolower($value); // Mutator function will convert all emails into lowercase whenever a user registers an account on TalentCloud. 
     }
+    
+ //Commented out the accessor in favor of using the mutator above.  
+ // public function CheckEmailCaseConversionPassed($value) 
+ //   {    
+ //       return strtolower($value);  
+ //   }
 
 }
