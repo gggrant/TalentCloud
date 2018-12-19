@@ -71,23 +71,6 @@ class LoginController extends AuthController
             'login_template' => Lang::get('common/auth/login'),
         ]);
     }
-
-    /**
-     * OVERRIDE
-     * Log the user out of the application.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function logout(Request $request)
-    {
-        $this->guard()->logout();
-
-        $request->session()->invalidate();
-
-        //This causes logout to redirect to the same page as login
-        return redirect($this->redirectPath());
-    }
     
     public function credentials()
     {
@@ -98,4 +81,24 @@ class LoginController extends AuthController
     }
     return $credentials;
     }
+    
+    /**
+     * OVERRIDE
+     * Log the user out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        //This causes logout to redirect to the same page as login
+        return redirect($this->redirectPath());
+    }
+    
+   
 }
