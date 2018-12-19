@@ -12,7 +12,7 @@ return [
     |*  
     */
     
-    'line_1' => 'You are receiving this email because we received a password reset request for your account.',
-    'action' => 'Reset Password',
-    'line_2' => 'If you did not request a password reset, no further action is required.',
+    'line_1' => 'Vous recevez ce courriel parce que nous avons reçu une demande de réinitialisation de mot de passe pour votre compte.',
+    'action' => 'Réinitialiser le mot de passe',
+    'line_2' => 'Si vous n`avez pas soumis une demande de réinitialisation de mot de passe, aucune action est requise.',
 ];
