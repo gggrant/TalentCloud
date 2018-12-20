@@ -79,8 +79,8 @@ class RegisterController extends AuthController
                 'min:8',
                 new PasswordFormatRule,
                 'confirmed'
-           ],
-       ]);
+            ],
+        ]);
     }
 
     /**
@@ -124,14 +124,4 @@ class RegisterController extends AuthController
     {
         return redirect()->intended($this->redirectTo());
     }
-  protected function credentials()
-    {
-    $username = $this->username();
-    $credentials = request()->only($username, 'password');
-    if (isset($credentials[$username])) {
-        $credentials[$username] = strtolower($credentials[$username]);
-    }
-    return $credentials;
-    }    
-    
 }

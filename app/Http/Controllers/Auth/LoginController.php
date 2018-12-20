@@ -72,16 +72,6 @@ class LoginController extends AuthController
         ]);
     }
     
-    public function credentials()
-    {
-    $username = $this->username();
-    $credentials = request()->only($username, 'password');
-    if (isset($credentials[$username])) {
-        $credentials[$username] = strtolower($credentials[$username]);
-    }
-    return $credentials;
-    }
-    
     /**
      * OVERRIDE
      * Log the user out of the application.
@@ -99,6 +89,22 @@ class LoginController extends AuthController
         //This causes logout to redirect to the same page as login
         return redirect($this->redirectPath());
     }
+    /**
+     * OVERRIDE
+     * Get the needed authorization credentials from the request,
+     * with the email username in lowercase.
+     *
+     * @return array $credentials
+     */
+    protected function credentials()
+    {
+        $username = $this->username();
+        $credentials = request()->only($username, 'password');
+
+        if (isset($credentials[$username])) {
+            $credentials[$username] = strtolower($credentials[$username]);
+        }
+        return $credentials;
+    }
     
-   
 }
