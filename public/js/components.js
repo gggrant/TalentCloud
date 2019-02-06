@@ -24235,10 +24235,11 @@ var ReactButton = function (_React$Component) {
             if (this.state.liked) {
                 return 'You liked this.';
             }
+            console.log(this.props);
 
             return React.createElement('button', { onClick: function onClick() {
                     return _this2.setState({ liked: true });
-                } }, 'Like');
+                } }, this.props.home_template.home_title);
         }
     }]);
 
@@ -24246,7 +24247,14 @@ var ReactButton = function (_React$Component) {
 }(React.Component);
 
 var domContainer = document.querySelector("#react_button");
-ReactDOM.render(React.createElement(ReactButton, null), domContainer);
+if (domContainer) {
+    // const props = Object.assign({}, domContainer.dataset);
+    var home_template = JSON.parse(domContainer.getAttribute('data-home_template'));
+    var props = { home_template: home_template };
+
+    console.log(props);
+    ReactDOM.render(React.createElement(ReactButton, props), domContainer);
+}
 
 /***/ }),
 
