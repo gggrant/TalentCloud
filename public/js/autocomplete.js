@@ -81,6 +81,7 @@ $(document).ready(function () {
     var $js_combobox = $('.js-combobox'),
         $body = $('body'),
 
+
     // default_text_help = 'Use tabulation (or down) key to access and browse suggestions after input. Confirm your choice with enter key, or esc key to close suggestions box.',
     default_text_help = '',
         default_class_for_invisible_text = 'invisible',
@@ -94,7 +95,8 @@ $(document).ready(function () {
         min_length = 0,
         limit_number_suggestions = 666,
         search_option = 'beginning',
-        // or 'containing'
+
+    // or 'containing'
     see_more_text = 'See more results…',
         tablo_suggestions = [];
 
@@ -185,8 +187,10 @@ $(document).ready(function () {
                 $form = $container.parents('form'),
                 options = $container.data(),
                 $combobox_prefix_class = typeof options.comboboxPrefixClass !== 'undefined' ? options.comboboxPrefixClass : '',
-                // no "-"" because already generated
+
+            // no "-"" because already generated
             $suggestions = $container.find('.js-suggest div'),
+
 
             //$suggestion_list = $suggestions.find('.js-suggestion'),
             $suggestions_text = $container.find('.js-suggestion-text'),
@@ -258,7 +262,8 @@ $(document).ready(function () {
         }).on('click', function (event) {
             var $target = $(event.target),
                 $suggestions_text = $('.js-suggestion-text:not(:empty)'),
-                // if a suggestion text is not empty => suggestion opened somewhere
+
+            // if a suggestion text is not empty => suggestion opened somewhere
             $container = $suggestions_text.parents('.js-container'),
                 $input_text = $container.find('.js-combobox'),
                 $suggestions = $container.find('.js-suggest div');
