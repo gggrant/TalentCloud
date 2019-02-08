@@ -43,19 +43,22 @@ export default {
       type: Object,
       required: true
     },
-    references: {
+    initialReferences: {
       type: Array,
       required: true
     }
   },
-  //   data: {
-  //     references: initialReferences //TODO: It should store a deep copy
-  //   },
+  data() {
+    return {
+      references: []
+    };
+  },
   components: {
     Reference
   },
   methods: {
     nextId: function(objs) {
+        console.log(objs);
       const ids = objs.map(x => x.id);
       const maxReducer = (a, b) => Math.max(a, b);
       return ids.reduce(maxReducer, 0) + 1;
@@ -70,12 +73,13 @@ export default {
       };
     },
     addItem: function(event) {
-      console.log("Add Item");
+      console.log(this.$data.references);
       const nextId = this.nextId(this.references);
-      //this.references.push(this.createEmptyReference(nextId));
+      this.references.push(this.createEmptyReference(nextId));
     }
   },
   mounted() {
+    this.references = this.initialReferences;//TODO: It should store a deep copy
     console.log("ReferenceList mounted.");
   }
 };

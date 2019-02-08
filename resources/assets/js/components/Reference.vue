@@ -1,18 +1,15 @@
 <template>
-  <div
-    class="profile-element accordion reference modal-target-object"
-    v-bind:class="{active: isActive}"
-  >
+  <div class="profile-element accordion reference modal-target-object" v-bind:class="{active: isActive}">
     <button
       v-bind:aria-expanded="isActive"
       class="accordion-trigger"
       tabindex="0"
       type="button"
-      v-on:click="isActive = !isActive"
+      v-on:click="toggleActive"
     >
       <span class="accordion-title">{{title}}</span>
     </button>
-    <div v-bind:aria-hidden="isActive" class="accordion-content">
+    <div v-bind:aria-hidden="!isActive" class="accordion-content">
       <form action="/" method="POST">
         <div class="form__wrapper">
           <div class="form-error box"/>
@@ -55,8 +52,22 @@ export default {
     return {
       isActive: false,
       name: "",
-      nameId:null
+      nameId: null
     };
+  },
+  computed: {
+    triggerClass: function() {
+      return (
+        "profile-element accordion reference modal-target-object" +
+        (this.isActive ? " active" : "")
+      );
+    }
+  },
+  methods: {
+    toggleActive: function() {
+      this.isActive = !this.isActive;
+      console.log('isActive toggled to ' + this.isActive);
+    }
   },
   mounted() {
     this.nameId = "name" + this._uid;

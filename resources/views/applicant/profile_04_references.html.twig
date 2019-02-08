@@ -28,7 +28,7 @@
             <reference-list
                 :lang="{{ trans('applicant/profile_references')|json_encode() }}"
                 :lang-reference="{{ trans('common/references')|json_encode() }}"
-                :references="{{ applicant.references|json_encode() }}">
+                :initial-references="{{ applicant.references|json_encode() }}">
             </reference-list>
         </div>
     </section>

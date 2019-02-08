@@ -1830,9 +1830,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     lang: {
@@ -1852,6 +1849,17 @@ __webpack_require__.r(__webpack_exports__);
       name: "",
       nameId: null
     };
+  },
+  computed: {
+    triggerClass: function triggerClass() {
+      return "profile-element accordion reference modal-target-object" + (this.isActive ? " active" : "");
+    }
+  },
+  methods: {
+    toggleActive: function toggleActive() {
+      this.isActive = !this.isActive;
+      console.log('isActive toggled to ' + this.isActive);
+    }
   },
   mounted: function mounted() {
     this.nameId = "name" + this._uid;
@@ -1914,19 +1922,22 @@ __webpack_require__.r(__webpack_exports__);
       type: Object,
       required: true
     },
-    references: {
+    initialReferences: {
       type: Array,
       required: true
     }
   },
-  //   data: {
-  //     references: initialReferences //TODO: It should store a deep copy
-  //   },
+  data: function data() {
+    return {
+      references: []
+    };
+  },
   components: {
     Reference: _Reference__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   methods: {
     nextId: function nextId(objs) {
+      console.log(objs);
       var ids = objs.map(function (x) {
         return x.id;
       });
@@ -1947,11 +1958,14 @@ __webpack_require__.r(__webpack_exports__);
       };
     },
     addItem: function addItem(event) {
-      console.log("Add Item");
-      var nextId = this.nextId(this.references); //this.references.push(this.createEmptyReference(nextId));
+      console.log(this.$data.references);
+      var nextId = this.nextId(this.references);
+      this.references.push(this.createEmptyReference(nextId));
     }
   },
   mounted: function mounted() {
+    this.references = this.initialReferences; //TODO: It should store a deep copy
+
     console.log("ReferenceList mounted.");
   }
 });
@@ -3730,11 +3744,7 @@ var render = function() {
             tabindex: "0",
             type: "button"
           },
-          on: {
-            click: function($event) {
-              _vm.isActive = !_vm.isActive
-            }
-          }
+          on: { click: _vm.toggleActive }
         },
         [
           _c("span", { staticClass: "accordion-title" }, [
@@ -3747,7 +3757,7 @@ var render = function() {
         "div",
         {
           staticClass: "accordion-content",
-          attrs: { "aria-hidden": _vm.isActive }
+          attrs: { "aria-hidden": !_vm.isActive }
         },
         [
           _c("form", { attrs: { action: "/", method: "POST" } }, [
