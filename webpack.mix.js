@@ -16,7 +16,7 @@ mix.js('resources/assets/js/bootstrap.js', 'public/js')
    .js('resources/assets/js/autocomplete.js', 'public/js')
    .js('resources/assets/js/modernizr.js', 'public/js')
    .js('resources/assets/js/jquery-ui.min.js', 'public/js')
-   .react('resources/assets/js/react.js', 'public/js')
+   .js('resources/assets/js/vue.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .options({
         processCssUrls: false,

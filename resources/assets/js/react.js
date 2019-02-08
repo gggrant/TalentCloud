@@ -12,6 +12,6 @@ require("./bootstrap");
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require("./components/JobPoster");
-require("./components/Reference");
-require("./components/ReferenceList");
+require("./react-components/JobPoster");
+require("./react-components/Reference");
+require("./react-components/ReferenceList");

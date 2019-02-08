@@ -8,5 +8,10 @@
     "php.suggest.basic": false,
     "phpcbf.executablePath": "./vendor/bin/phpcbf",
     "phpcbf.standard": "./ruleset.xml",
-    "phpcs.standard": "./ruleset.xml"
+    "phpcs.standard": "./ruleset.xml",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue"
+    ]
 }
