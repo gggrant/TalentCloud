@@ -23,7 +23,16 @@
     {% include "applicant/profile/menu" %}
 
     {# References #}
-    {% include "applicant/profile/references/index" %}
+    <section class="applicant-profile__portfolio">
+        <div class="container--layout">
+            <reference-list
+                :lang="{{ trans('applicant/profile_references')|json_encode() }}"
+                :lang-reference="{{ trans('common/references')|json_encode() }}"
+                :references="{{ applicant.references|json_encode() }}">
+            </reference-list>
+        </div>
+    </section>
+    {# {% include "applicant/profile/references/index" %} #}
 
     {# Modals #}
     {% include "common/modal" with {"page":profile} %}
