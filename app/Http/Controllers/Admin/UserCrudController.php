@@ -31,6 +31,11 @@ class UserCrudController extends CrudController
             'type' => 'text',
             'label' => 'Role'
         ]);
+        $this->crud->addColumn([
+            'name' => 'applicant.priority',
+            'type' => 'check',
+            'label' => 'Priority'
+        ]);
 
         $this->crud->addFilter([
             'name' => 'user_role',
@@ -38,7 +43,7 @@ class UserCrudController extends CrudController
             'label' => 'Role'
         ], function () {
             return UserRole::all()->keyBy('id')->pluck('name', 'id')->toArray();
-        }, function ($value) {
+        }, function ($value) : void {
             $this->crud->addClause('where', 'user_role_id', $value);
         });
 
@@ -50,13 +55,29 @@ class UserCrudController extends CrudController
                 'readonly'=>'readonly'
             ]
         ]);
+
+        // The toggle field doesn't seem to allow running a callback within it's
+        // options and hide_when parameters so we need to prep the data here.
+        // This creates a couple of arrays to populate a radio button field with the
+        // existing saved User Roles in the database, as well as set which option will show
+        // or hide the following Priority field.
+        $userRoles = UserRole::all()->keyBy('id')->pluck('name', 'id')->toArray();
+        $userRolesToggle = UserRole::where('name', '!=', 'applicant')->pluck('id')->toArray();
+        $userRolesToggle = array_fill_keys($userRolesToggle, ['applicant.priority']);
+
         $this->crud->addField([
-            'label' => "Role",
-            'type' => 'select',
-            'name' => 'user_role_id', // the db column for the foreign key
-            'entity' => 'user_role', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\UserRole" // foreign key model
+            'label' => 'Role',
+            'name' => 'user_role_id',
+            'type' => 'toggle',
+            'inline' => true,
+            'options' => $userRoles,
+            'hide_when' => $userRolesToggle,
+            'default' => $this->crud->getCurrentEntry() ? $this->crud->getCurrentEntry()->user_role_id : 0,
+        ]);
+        $this->crud->addField([
+            'name' => 'applicant.priority',
+            'label' => 'Priority',
+            'type' => 'checkbox'
         ]);
     }
 
