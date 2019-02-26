@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Collection;
  * @property string $linkedin_url
  * @property int $user_id
  * @property boolean $is_snapshot
+ * @property boolean $priority
  *
  * @property \Jenssegers\Date\Date $created_at
  * @property \Jenssegers\Date\Date $updated_at
@@ -44,13 +45,15 @@ class Applicant extends BaseModel
         'tagline' => 'string',
         'twitter_username' => 'string',
         'linkedin_url' => 'string',
-        'is_snapshot' => 'boolean'
+        'is_snapshot' => 'boolean',
+        'priority' => 'boolean',
     ];
     protected $fillable = [
         'personal_website',
         'tagline',
         'twitter_username',
-        'linkedin_url'
+        'linkedin_url',
+        'priority',
     ];
 
     public function user()
