@@ -254,6 +254,11 @@ Route::group(
                     ->middleware('can:view,jobPoster')
                     ->name('manager.jobs.show');
 
+                Route::get('jobs/{jobPoster}/applications', 'ApplicationByJobController@index')
+                    ->where('jobPoster', '[0-9]+')
+                    ->middleware('can:review,jobPoster')
+                    ->name('manager.jobs.applications');
+
                 /* Create Job */
                 Route::get('jobs/create', 'JobController@create')
                     ->middleware('can:create,App\Models\JobPoster')
