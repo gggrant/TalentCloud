@@ -6,6 +6,9 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Mail;
+
+use Jenssegers\Date\Date;
 
 use App\Models\Applicant;
 use App\Models\Criteria;
@@ -18,6 +21,7 @@ use App\Models\Manager;
 use App\Models\Lookup\Province;
 use App\Models\Lookup\SecurityClearance;
 use Doctrine\Common\Cache\VoidCache;
+use App\Mail\JobPosterReviewRequested;
 
 class JobControllerTest extends TestCase
 {
@@ -61,7 +65,7 @@ class JobControllerTest extends TestCase
     {
         $response = $this->get('jobs/' . $this->publishedJob->id);
         $response->assertStatus(200);
-        $response->assertSee(Lang::get('applicant/job_post')['apply']['login_link_title']);
+        $response->assertSee(e(Lang::get('applicant/job_post')['apply']['login_link_title']));
     }
 
     /**
@@ -76,7 +80,7 @@ class JobControllerTest extends TestCase
         $response = $this->actingAs($applicant->user)
             ->get('jobs/' . $this->publishedJob->id);
         $response->assertStatus(200);
-        $response->assertSee(Lang::get('applicant/job_post')['apply']['apply_link_title']);
+        $response->assertSee(e(Lang::get('applicant/job_post')['apply']['apply_link_title']));
     }
 
     /**
@@ -90,8 +94,34 @@ class JobControllerTest extends TestCase
             ->get('manager/jobs');
         $response->assertStatus(200);
 
-        $response->assertSee('<h3>' . $this->jobPoster->title . '</h3>');
-        $response->assertDontSee('<h3>' . $this->otherJobPoster->title . '</h3>');
+        $response->assertSee(e($this->jobPoster->title));
+        $response->assertDontSeeText(e($this->otherJobPoster->title));
+    }
+
+    /**
+     * Ensure a Job Poster can be submitted for review.
+     *
+     * @return void
+     */
+    public function testSubmitForReview() : void
+    {
+        Mail::fake();
+
+        $jobPoster = $this->jobPoster;
+
+        $response = $this->followingRedirects()
+            ->actingAs($this->manager->user)
+            ->post("manager/jobs/$jobPoster->id/review");
+
+        $response->assertStatus(200);
+
+        $jobPoster->refresh();
+
+        $this->assertInstanceOf(Date::class, $jobPoster->review_requested_at);
+
+        Mail::assertSent(JobPosterReviewRequested::class, function ($mail) use ($jobPoster) {
+            return $mail->jobPoster->id === $jobPoster->id;
+        });
     }
 
     /**
@@ -105,11 +135,11 @@ class JobControllerTest extends TestCase
             ->get('manager/jobs/create');
         $response->assertStatus(200);
 
-        $response->assertSee('<h2 class="heading--01">' . Lang::get('manager/job_create')['title'] . '</h2>');
+        $response->assertSee(e(Lang::get('manager/job_create')['title']));
         $response->assertViewIs('manager.job_create');
 
-        $response->assertSee(Lang::get('manager/job_create', [], 'en')['questions']['00']);
-        $response->assertSee(Lang::get('manager/job_create', [], 'fr')['questions']['00']);
+        $response->assertSee(e(Lang::get('manager/job_create', [], 'en')['questions']['00']));
+        $response->assertSee(e(Lang::get('manager/job_create', [], 'fr')['questions']['00']));
     }
 
     /**
@@ -175,7 +205,7 @@ class JobControllerTest extends TestCase
         $response->assertStatus(200);
         $response->assertViewIs('applicant.job_post');
         $this->assertDatabaseHas('job_posters', $dbValues);
-        $response->assertSee(Lang::get('applicant/job_post')['apply']['edit_link_title']);
+        $response->assertSee(e(Lang::get('applicant/job_post')['apply']['edit_link_title']));
     }
 
     /**
@@ -191,13 +221,13 @@ class JobControllerTest extends TestCase
         $response->assertStatus(200);
         $response->assertViewIs('manager.job_create');
         // Check for a handful of properties
-        $response->assertSee($this->jobPoster->city);
-        $response->assertSee($this->jobPoster->education);
-        $response->assertSee($this->jobPoster->title);
-        $response->assertSee($this->jobPoster->impact);
-        $response->assertSee($this->jobPoster->branch);
-        $response->assertSee($this->jobPoster->division);
-        $response->assertSee($this->jobPoster->education);
+        $response->assertSee(e($this->jobPoster->city));
+        $response->assertSee(e($this->jobPoster->education));
+        $response->assertSee(e($this->jobPoster->title));
+        $response->assertSee(e($this->jobPoster->impact));
+        $response->assertSee(e($this->jobPoster->branch));
+        $response->assertSee(e($this->jobPoster->division));
+        $response->assertSee(e($this->jobPoster->education));
     }
 
         /**

@@ -263,11 +263,28 @@ Route::group(
                     ->where('jobPoster', '[0-9]+')
                     ->name('manager.jobs.store');
 
+                Route::get('jobs/{jobPoster}/applications', 'ApplicationByJobController@index')
+                    ->where('jobPoster', '[0-9]+')
+                    ->middleware('can:review,jobPoster')
+                    ->name('manager.jobs.applications');
+
                 /* Edit Job */
                 Route::get('jobs/{jobPoster}/edit', 'JobController@edit')
                     ->where('jobPoster', '[0-9]+')
                     ->middleware('can:update,jobPoster')
                     ->name('manager.jobs.edit');
+
+                /* Delete Job */
+                Route::delete('jobs/{jobPoster}', 'JobController@destroy')
+                    ->where('jobPoster', '[0-9]+')
+                    ->middleware('can:delete,jobPoster')
+                    ->name('manager.jobs.destroy');
+
+                /* Request Review */
+                Route::post('jobs/{jobPoster}/review', 'JobController@submitForReview')
+                    ->where('jobPoster', '[0-9]+')
+                    ->middleware('can:update,jobPoster')
+                    ->name('manager.jobs.review');
             });
 
             Route::get('jobs/{jobPoster}/screening-plan', 'ScreeningPlanController@createForJob')
@@ -293,6 +310,10 @@ Route::group(
         };
 
         Route::group(['prefix' => config('app.manager_prefix')], $managerGroup);
+
+        Route::group(['prefix' => 'demo', 'middleware' => 'localOnly'], function () : void {
+            Route::get('review-applications', 'DemoController@reviewApplications')->name('demo.review_applications');
+        });
 
         /* Language ============================================================= */
 
@@ -367,12 +388,8 @@ Route::middleware(['auth'])->group(function () : void {
         ->middleware('can:delete,application')
         ->name('applications.destroy');
 
-    //TODO: Because this is for reviews indexed by application, it checks that user is a manager
-    //  with view permissions for the applicaiton. Using an ApplicationReview
-    //  policy would be better, but I'm not sure how to set it up for now.
     Route::put('applications/{application}/review', 'ApplicationReviewController@updateForApplication')
-        ->middleware('role:manager')
-        ->middleware('can:view,application')
+        ->middleware('can:review,application')
         ->name('application_reviews.update');
 
     Route::delete('screening-plans/{screeningPlan}', 'ScreeningPlanController@destroy')
